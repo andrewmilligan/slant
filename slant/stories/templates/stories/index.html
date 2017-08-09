@@ -1,0 +1,141 @@
+{% extends "stories/base.html" %}
+{% load static %}
+  
+{% block content %}
+
+  <div class="col-md-8">
+  {% if image_stories_list or no_image_stories_list %}
+    
+    {% if image_stories_list %}
+      {% for story in image_stories_list %}
+
+        <div class="row">
+          <div class="col-md-12">
+            <div class="storybox">
+
+              {% if not story.primaryImage is None %}
+                <div class="storybox-image">
+                  <div class="imagewrap">
+                    <img src="{{ story.primaryImage.crop_wide_src }}" class="img" width="100%">
+                  </div>
+                  <div class="credit-caption">
+                    <span class="image-credit">
+                      {% if story.primaryImage.producer %}
+                        {{ story.primaryImage.producer }}
+                        {% if story.primaryImage.provider %}
+                          /{{ story.primaryImage.provider }}
+                        {% endif %}
+                      {% else %}
+                        {% if story.primaryImage.provider %}
+                          {{ story.primaryImage.provider }}
+                        {% endif %}
+                      {% endif %}
+                    </span>
+                  </div>
+                </div>
+              {% endif %}
+
+              <div class="storybox-info">
+                <h4 class="outlet-slug">{{ story.outlet }}</h4>
+                <h3><a href="{% url 'stories:detail' story.id %}">{{ story.title }}</a></h3>
+                <div class="storybox-teaser">
+                  <span class="date">{{ story.storyDateString }} &bull;</span>
+                  {% autoescape off %}
+                  {{ story.teaser }}
+                  {% endautoescape %}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+    {% endif %}
+
+    {% if no_image_stories_list %}
+      <div class="row">
+        {% for story in no_image_stories_list %}
+
+            <div class="col-md-6">
+              <div class="storybox">
+
+                <div class="storybox-info noimage">
+                  <h4 class="outlet-slug">{{ story.outlet }}</h4>
+                  <h3><a href="{% url 'stories:detail' story.id %}">{{ story.title }}</a></h3>
+                  <div class="storybox-teaser">
+                    <span class="date">{{ story.storyDateString }} &bull;</span>
+                    {{ story.teaser }}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {% if forloop.counter|divisibleby:2 %}
+      </div>
+      <div class="row">
+            {% endif %}
+
+        {% endfor %}
+        </div>
+
+    {% endif %}
+
+  {% else %}
+    <div class="storybox" id="nothingnew">
+      <h2>No new stories.</h2>
+    </div>
+  {% endif %}
+
+  </div>
+
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="outlet-banner">
+
+          <div class="outlet-logo">
+            <img src="{% static 'stories/npr-logo.png' %}" class="img" width="100%">
+          </div>
+
+          <div class="outlet-blurb">
+            <p>
+            "<strong>National Public Radio</strong> will serve the individual; it
+            will promote personal growth; it will regard the individual
+            differences among men with respect and joy rather than derision and
+            hate; it will celebrate the human experience as infinitely varied
+            rather than vacuous and banal; it will encourage a sense of active
+            constructive participation, rather than apathetic helplessness."
+            &mdash;Bill Siemering
+            </p>
+          </div>
+
+          <div class="outlet-dashboard">
+            {% if user.is_authenticated %}
+            <p>Stories are updated nightly, but click the button below to pull
+            down new stories from NPR. Or visit the NPR website directly for
+            more.</p>
+            {% else %}
+            <p>Stories are updated nightly, but visit the NPR website directly
+            for more.</p>
+            {% endif %}
+
+            {% if user.is_authenticted %}
+            <div class="dashboard-button">
+              <a class="btn btn-default btn-block" href="{% url 'stories:check_for_new' %}">New Stories</a>
+            </div>
+            {% endif %}
+
+            <div class="dashboard-button">
+              <a class="btn btn-default btn-block" href="http://www.npr.org/">Visit NPR</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

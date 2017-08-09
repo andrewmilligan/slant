@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^dataviz/', include('dataviz.urls')),
+    url(r'^news/', include('stories.urls')),
 ]

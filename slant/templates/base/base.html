@@ -41,7 +41,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="{% block navbar_stories_class %}{% endblock %}">
-              <a href="{#% url 'stories:index' %#}">News</a>
+              <a href="{% url 'stories:index' %}">News</a>
             </li>
             <li class="{% block navbar_dataviz_class %}{% endblock %}">
               <a href="{% url 'dataviz:index' %}">Dataviz</a>

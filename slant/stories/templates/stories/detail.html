@@ -1,0 +1,74 @@
+{% extends "stories/base.html" %}
+
+{% load static %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{% static 'stories/story_detail.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'stories/style.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="story">
+
+    <div class="story-title">
+      <h1 id="story-title" class="page-header">{{ story.title }}</h1>
+    </div>
+
+    <div class="story-info">
+      {% if story.story_date %}
+        <p>{{ story.storyDateString }} &bull; {{ story.storyTimeString }}</p>
+      {% endif %}
+      {% if story.byline %}
+        <p>{{ story.bylineName }}</p>
+      {% endif %}
+    </div>
+
+    {% if not story.primaryImage is None %}
+      <div class="story-image">
+        <div class="imagewrap">
+          <img src="{{ story.primaryImage.crop_wide_src }}" class="img" width="100%">
+        </div>
+        <div class="credit-caption">
+          <div class="image-caption">
+            <p>{{ story.primaryImage.caption }}</p>
+          </div>
+          <span class="image-credit">
+            {% if story.primaryImage.producer %}
+              {{ story.primaryImage.producer }}
+              {% if story.primaryImage.provider %}
+                /{{ story.primaryImage.provider }}
+              {% endif %}
+            {% else %}
+              {% if story.primaryImage.provider %}
+                {{ story.primaryImage.provider }}
+              {% endif %}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if not story.pull_quotes is None  and story.pull_quotes %}
+      {% for quote in story.pull_quotes.all %}
+        <div class="storyquote">
+          <p><blockquote>{{ quote.text }}</blockquote></p>
+          <p><small>{{ quote.person }}<small></p>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+    <div class="storybody">
+      {% autoescape off %}
+      {{ story.text }}
+      {% endautoescape %}
+    </div>
+
+  </div>
+
+  <!--
+  <div class="backbutton">
+    <p><a class="btn btn-default" href="{% url 'stories:index' %}" role="button">Back</a>
+  </div>
+  -->
+
+{% endblock %}
