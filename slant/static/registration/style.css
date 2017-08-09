@@ -1,0 +1,119 @@
+body {
+  padding-top: 100px;
+  padding-bottom: 40px;
+  background-color: #757575;
+}
+
+.help-form-container {
+  max-width: 680px;
+  overflow: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-control {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.password-help-text {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+  color: #aaa;
+}
+
+.password-help-text span {
+  /*color: #30688b;*/
+  color: #454545;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  /*
+  z-index: 2;
+  */
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: 15px;
+  border-radius: 0;
+  background-color: #666;
+  border: 0;
+  color: #e0e0e0;
+  /*
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  */
+}
+
+.form-signin input[type="text"] {
+  margin-bottom: 15px;
+  border-radius: 0;
+  background-color: #666;
+  border: 0;
+  color: #e0e0e0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 15px;
+  border-radius: 0;
+  background-color: #666;
+  border: 0;
+  color: #e0e0e0;
+  /*
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  */
+}
+
+#login-button {
+  color: #aaa;
+  background-color: #30688b;
+  border-radius: 0;
+  border-color: #aaa;
+  border: 0;
+  margin-top: 40px;
+}
+
+#login-button:hover {
+  color: #ccc;
+  background-color: #30808b;
+}
+
+#login-button:focus, #login-button:active, #login-button:focus:active {
+  color: #ccc;
+  background-color: #106069;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+

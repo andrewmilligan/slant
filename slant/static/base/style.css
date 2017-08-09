@@ -1,0 +1,16 @@
+#contentblock-container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+body {
+  background: #eee;
+}
+
+.navbar-default .navbar-brand {
+  color: #ff0b3a;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #d1082f;
+}
