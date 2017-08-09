@@ -15,7 +15,7 @@ class NPRRequest:
   params = {
       'output': 'JSON',
       'fields': 'title,teaser,storyDate,byline,image,textWithHtml,pullQuote',
-      'apiKey': 'MDI5NzM2OTIzMDE0ODQxNjE2OTk5OTZkYw000',
+      'apiKey': '',
       'dateType': 'story',
       'requiredAssets': 'text'
       }
@@ -44,43 +44,44 @@ class NPRRequest:
   # private
   __uri_components = []
 
-  def __init__(self):
-    pass
+  def __init__(self, key=None):
+    if not key is None:
+      self.params['apiKey'] = key
 
 #---------------------------------------------------------------------------
 
-def newsRequest():
-  req = NPRRequest()
+def newsRequest(key=None):
+  req = NPRRequest(key)
   req.params.update({'id': req.TOPICS['news']})
   return req
 
-def politicsRequest():
-  req = NPRRequest()
+def politicsRequest(key=None):
+  req = NPRRequest(key)
   req.params.update({'id': req.TOPICS['politics']})
   return req
 
-def economyRequest():
-  req = NPRRequest()
+def economyRequest(key=None):
+  req = NPRRequest(key)
   req.params.update({'id': req.TOPICS['economy']})
   return req
 
-def businessStoryOfTheDayRequest():
-  req = NPRRequest()
+def businessStoryOfTheDayRequest(key=None):
+  req = NPRRequest(key)
   req.params.update({'id': req.TOPICS['business_story_of_the_day']})
   return req
 
-def worldStoryOfTheDayRequest():
-  req = NPRRequest()
+def worldStoryOfTheDayRequest(key=None):
+  req = NPRRequest(key)
   req.params.update({'id': req.TOPICS['world_story_of_the_day']})
   return req
 
-def nationalSecurityRequest():
-  req = NPRRequest()
+def nationalSecurityRequest(key=None):
+  req = NPRRequest(key)
   req.params.update({'id': req.TOPICS['national_security']})
   return req
 
-def keywordRequest(keyword):
-  req = NPRRequest()
+def keywordRequest(keyword, key=None):
+  req = NPRRequest(key)
   try:
     req.params.update({'id': req.TOPICS[keyword]})
   except KeyError as e:

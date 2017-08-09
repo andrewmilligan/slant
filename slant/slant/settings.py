@@ -25,7 +25,7 @@ SECRET_KEY = '2w@7@9u*2$(_xt8ay$*uev(i@l^nxy^(--apgqi-3h1@gqn^_7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     #'south',
     'dataviz.apps.DatavizConfig',
     'stories.apps.StoriesConfig',
+    'comics.apps.ComicsConfig',
 ]
 
 MIDDLEWARE = [

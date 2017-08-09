@@ -40,14 +40,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+            {% if false %}
             <li class="{% block navbar_stories_class %}{% endblock %}">
               <a href="{% url 'stories:index' %}">News</a>
             </li>
+            {% endif %}
             <li class="{% block navbar_dataviz_class %}{% endblock %}">
               <a href="{% url 'dataviz:index' %}">Dataviz</a>
             </li>
             <li class="{% block navbar_comics_class %}{% endblock %}">
-              <a href="{#% url 'comics:index' %#}">xkcd</a>
+              <a href="{% url 'comics:index' %}">xkcd</a>
             </li>
           </ul>
 

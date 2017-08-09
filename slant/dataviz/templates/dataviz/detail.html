@@ -62,12 +62,13 @@
       {% render_this story.text %}
     </div>
 
+    <div class="backbutton">
+      <p><a class="btn btn-default" href="{% url 'dataviz:index' %}" role="button">
+        <span class="glyphicon glyphicon-menu-left"></span>
+        <span class="glyphicon glyphicon-menu-left"></span>
+        <span class="glyphicon glyphicon-menu-left"></span></a>
+    </div>
   </div>
 
-  <!--
-  <div class="backbutton">
-    <p><a class="btn btn-default" href="{% url 'stories:index' %}" role="button">Back</a>
-  </div>
-  -->
 
 {% endblock %}

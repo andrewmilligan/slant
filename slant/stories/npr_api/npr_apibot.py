@@ -35,7 +35,9 @@ class NPRAPIBot:
   on_ping_rt = 20
 
   # bearer token - NOT USED BY GATEWAYS
-  api_key = 'MDI5NzM2OTIzMDE0ODQxNjE2OTk5OTZkYw000'
+  #api_key = 'MDI5NzM2OTIzMDE0ODQxNjE2OTk5OTZkYw000'
+  #api_key = 'yiCHzT9xSN4sIOEoBNb3fwIvCSFi2mHgz9NYTEqJ'
+  api_key = 'nprone_trial_cNzL6u2aD9eo'
   #-------------------------------------------------------------------------
 
   #- Initialization --------------------------------------------------------
@@ -193,16 +195,11 @@ class NPRAPIBot:
     return rsp_json
 
   def getPoliticsStories(self):
-    msg = messages.politicsRequest()
+    msg = messages.politicsRequest(self.api_key)
     return self.parseJsonToStoryList(self.requestJson(msg))
 
   def getNewsStories(self):
-    msg = messages.newsRequest()
+    msg = messages.newsRequest(self.api_key)
     return self.parseJsonToStoryList(self.requestJson(msg))
-
-  def getLocalStories(self, filename):
-    with open(filename) as stories_file:
-      stories_json = json.load(stories_file)
-    return self.parseJsonToStoryList(stories_json)
 
   #- End of Requests -------------------------------------------------------

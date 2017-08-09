@@ -1,0 +1,56 @@
+{% extends 'comics/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div class="comic-area">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="outlet-banner">
+          <div class="outlet-logo">
+            <a href="http://xkcd.com/"><img src="{% static 'comics/xkcd_banner_crop.png' %}" class="img" width="100%"></a>
+          </div>
+          <div class="outlet-blurb">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="comic-wrapper">
+          <div class="comic-title">
+            <h2>{{ comic.title }}</h2>
+          </div>
+          <div class="comic-image">
+            <img src="{{ comic.image_src }}" class="comic"
+              title="{{ comic.hover_text }}">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="dashboard-button">
+          <a class="btn btn-default btn-block"
+            href="http://www.explainxkcd.com/{{ comic.num }}">Explain xkcd</a>
+        </div>
+      </div>
+    </div>
+
+    {% if user.is_authenticated %}
+    <div class="row">
+      <div class="col-md-12">
+        <div class="dashboard-button">
+          <a class="btn btn-default btn-block" href="{% url 'comics:check_for_new' %}">Check for new</a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+  
+{% endblock %}
