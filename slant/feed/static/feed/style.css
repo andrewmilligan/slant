@@ -1,9 +1,9 @@
 .stream {
   background: #fff;
   margin-top: 15px;
-  border: 1px solid #e0e0e0;
   padding-top: 15px;
   padding-bottom: 15px;
+  box-shadow: 5px 5px 2px #ddd;
 }
 
 .twitter-tweet {
@@ -11,57 +11,11 @@
   margin-right: auto;
 }
 
-.storybox {
-  background: #fff;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding: 15px;
-}
-
-.twitter-tweet {
-  width: 100%;
-}
-
-/*
-.storybox, .storybox:after {
-  clear: both;
-}
-
-.storybox:before, .storybox:after {
-  content: " ";
-  display: table;
-}
-*/
-
-.outlet-banner {
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  padding: 15px;
-  margin-top: 15px;
+.tweet-row {
   margin-bottom: 15px;
 }
 
-.outlet-logo {
+#nothingnew {
   text-align: center;
-  margin-bottom: 15px;
 }
 
-.outlet-blurb {
-  color: #757575;
-  font-size: 17px;
-}
-
-.outlet-dashboard {
-  border-top: 1px solid #e0e0e0;
-  margin-top: 20px;
-  padding-top: 18px;
-  color: #757575;
-  font-size: 14px;
-}
-
-.dashboard-button {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}

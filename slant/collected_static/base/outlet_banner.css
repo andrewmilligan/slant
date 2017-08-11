@@ -1,0 +1,30 @@
+.outlet-banner {
+  background: #fff;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 5px 5px 2px #ddd;
+}
+
+.outlet-logo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.outlet-blurb {
+  color: #757575;
+  font-size: 17px;
+}
+
+.outlet-dashboard {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 20px;
+  padding-top: 18px;
+  color: #757575;
+  font-size: 14px;
+}
+
+.dashboard-button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

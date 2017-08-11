@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 import xkcd_api
+import random
 
 # Create your models here.
 
@@ -16,23 +17,38 @@ class Comic(models.Model):
   @classmethod
   def check_for_new(cls):
     bot = xkcd_api.XkcdAPIBot()
-    comics = bot.getCurrentComic()
+    comic = bot.getCurrentComic()
     success = False
-    if comics:
+    if not comic is None:
       success = True
+      cls.objects.all().delete()
+      c = cls(title = comic.title,
+              image_src = comic.image_src,
+              hover_text = comic.hover_text,
+              num = comic.num,
+              outlet = comic.outlet)
+      c.save()
+      return c
+    return None
 
-      for old_comic in cls.objects.all():
-        old_comic.delete()
-
-      for comic in comics:
+  @classmethod
+  def get_random(cls):
+    bot = xkcd_api.XkcdAPIBot()
+    # get current comic to find max num. Min num is 1
+    newest_comic = bot.getCurrentComic()
+    if not newest_comic is None:
+      i = random.randrange(1, newest_comic.num + 1)
+      comic = bot.getComicNum(i)
+      if not comic is None:
+        cls.objects.all().delete()
         c = cls(title = comic.title,
                 image_src = comic.image_src,
                 hover_text = comic.hover_text,
                 num = comic.num,
                 outlet = comic.outlet)
         c.save()
-
-    return success
+        return c
+    return None
 
 
 

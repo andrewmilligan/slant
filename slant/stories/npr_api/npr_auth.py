@@ -1,4 +1,4 @@
 class NPRAPIAuth:
-  application_id = 'nprone_trial_cNzL6u2aD9eo'
-  application_secret = 'yiCHzT9xSN4sIOEoBNb3fwIvCSFi2mHgz9NYTEqJ'
+  application_id = os.environ['NPR_API_APPLICATION_ID']
+  application_secret = os.environ['NPR_API_APPLICATION_SECRET']
   api_key = ''

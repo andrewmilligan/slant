@@ -7,8 +7,6 @@
 import ssl        # for HTTPS
 import requests   # Python module for HTTP requests
 
-# Stratosphere Imports
-import models 
 from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 from django.utils.encoding import smart_str
@@ -38,6 +36,14 @@ class TwitterAPIBot:
 
   #api_key = 'MDI5NzM2OTIzMDE0ODQxNjE2OTk5OTZkYw000'
   auth = twitter_auth.TwitterAPIAuth()
+
+  default_search_queries = [
+      "from:nytgraphics",
+      "from:MarshallProject",
+      "from:WSJGraphics",
+      "from:jacobinmag",
+      "from:NPR",
+      ]
   #-------------------------------------------------------------------------
 
   #- Initialization --------------------------------------------------------
@@ -88,7 +94,6 @@ class TwitterAPIBot:
                               data=msg.data,
                               timeout=self.timeout,
                               verify=True)
-      print(response.request.url)
     except requests.exceptions.RequestException as e:
       raise api_exceptions.RequestError(e, uri)
     else:
@@ -133,19 +138,16 @@ class TwitterAPIBot:
 
   #- Requests --------------------------------------------------------------
 
-  def parseJsonToTweetList(self, json_obj):
+  def parseJsonToTweetList(self, TweetClass, json_obj):
     tweets = json_obj['statuses']
     tweet_objects = []
-    if not tweets:
-      print("No tweets found.")
     for t in tweets:
-      tweet_obj = models.Tweet()
+      tweet_obj = TweetClass()
       try:
         tweet_obj.screen_name = t['user']['screen_name']
-        tweet_obj.id = t['id']
+        tweet_obj.tweet_id = t['id']
         tweet_obj.html = self.embed(tweet_obj)
       except KeyError as e:
-        print("Tweet busted from: {}".format(e))
         continue
         
       tweet_objects.append(tweet_obj)
@@ -160,9 +162,19 @@ class TwitterAPIBot:
       raise api_exceptions.APIValueError(e)
     return rsp_json
 
-  def getSearch(self, q, result_type='recent'):
+  def getSearch(self, TweetClass, q, result_type='recent'):
     msg = messages.SearchRequest(self.apiKey(), q, result_type)
-    return self.parseJsonToTweetList(self.requestJson(msg))
+    return self.parseJsonToTweetList(TweetClass, self.requestJson(msg))
+
+  def runSearches(self, TweetClass, qlist=[], result_type='recent'):
+    if not qlist:
+      qlist = self.default_search_queries
+    tweets = []
+    for q in qlist:
+      tweets += self.getSearch(TweetClass, q, result_type)
+    return tweets
+
+
 
   # Get Auth Token
   def getAuthToken(self):
@@ -191,7 +203,7 @@ class TwitterAPIBot:
     self.auth.api_key = self.getAuthToken()
 
   def embed(self, tweet):
-    msg = messages.OEmbedRequest(tweet.screen_name, tweet.id)
+    msg = messages.OEmbedRequest(tweet.screen_name, tweet.tweet_id)
     rsp_json = self.requestJson(msg, "https://publish.twitter.com")
     return rsp_json['html']
 

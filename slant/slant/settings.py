@@ -20,14 +20,22 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2w@7@9u*2$(_xt8ay$*uev(i@l^nxy^(--apgqi-3h1@gqn^_7'
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
+# SECURITY WARNING: keep the secret key used in production secret!
+if DEBUG:
+  try:
+    from settings_secret import *
+  except ImportError as e:
+    raise ImportError("could not import secret settings. \
+        Are you trying to run production in debug mode?")
+else:
+  SECRET_KEY = os.environ['SECRET_KEY']
+  DATABASES = {'default': dj_database_url.config()}
+
 
 ALLOWED_HOSTS = ['*']
-
 
 # Application definition
 
@@ -77,21 +85,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'slant.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {'default': dj_database_url.config()}
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'slant_db',
-#        'USER': 'slant',
-#        'PASSWORD': '',
-#        'HOST': 'localhost',
-#        'PORT': '',
-#    }
-#}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -135,3 +128,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     ]
+
+
+
+### SUGGESTED BY manage.py check --deploy
+X_FRAME_OPTIONS = 'DENY'
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True

@@ -6,4 +6,5 @@ app_name = 'comics'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^last/$', views.check_for_new, name='check_for_new'),
+    url(r'^random/$', views.get_random, name='get_random'),
     ]

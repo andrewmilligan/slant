@@ -7,11 +7,11 @@
 .comic-wrapper {
   background: #fff;
   margin-top: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
-  padding-left: 80px;
-  padding-right: 80px;
-  border: 1px solid #e0e0e0;
   margin-bottom: 40px;
+  box-shadow: 5px 5px 2px #ddd;
 }
 
 .comic-title h2 {
@@ -19,15 +19,12 @@
 }
 
 .comic-image {
-  margin-top: 15px;
+  text-align: center;
   padding: 15px;
+  margin-top: 15px;
   margin-bottom: 15px;
-}
-
-.outlet-banner {
-  background: #fff;
-  margin-bottom: 15px;
-  border: 1px solid #e0e0e0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .outlet-logo {

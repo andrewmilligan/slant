@@ -1,6 +1,11 @@
 {% extends 'comics/base.html' %}
 {% load static %}
 
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'base/outlet_banner.css' %}">
+{% endblock %}
+
 {% block content %}
 
   <div class="comic-area">
@@ -19,15 +24,8 @@
 
     <div class="row">
       <div class="col-md-12">
-        <div class="comic-wrapper">
-          <div class="comic-title">
-            <h2>{{ comic.title }}</h2>
-          </div>
-          <div class="comic-image">
-            <img src="{{ comic.image_src }}" class="comic"
-              title="{{ comic.hover_text }}">
-          </div>
-
+        <div class="comic-wrapper" id="comic-wrapper">
+          {% include 'comics/comic.html' with comic=comic %}
         </div>
       </div>
     </div>
@@ -41,16 +39,50 @@
       </div>
     </div>
 
-    {% if user.is_authenticated %}
     <div class="row">
-      <div class="col-md-12">
-        <div class="dashboard-button">
-          <a class="btn btn-default btn-block" href="{% url 'comics:check_for_new' %}">Check for new</a>
+      <div class="col-md-6">
+        <div class="dashboard-button" id="random_button" ajax-update-url="{% url 'comics:get_random' %}">
+          <a class="btn btn-default btn-block" onClick="ajaxUpdateComicRandom()">
+            <span class="glyphicon glyphicon-random"></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="dashboard-button" id="latest_button" ajax-update-url="{% url 'comics:check_for_new' %}">
+          <a class="btn btn-default btn-block" onClick="ajaxUpdateComicLatest()">
+            <span class="glyphicon glyphicon-fast-forward"></span>
+          </a>
         </div>
       </div>
     </div>
-    {% endif %}
 
   </div>
   
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    function ajaxUpdateComicRandom() {
+      $.ajax({
+        url: $("#random_button").attr("ajax-update-url"),
+        data: {},
+        dataType: 'html',
+        success: function (data) {
+          $("#comic-wrapper").html(data);
+        }
+      });
+    }
+
+    function ajaxUpdateComicLatest() {
+      $.ajax({
+        url: $("#latest_button").attr("ajax-update-url"),
+        data: {},
+        dataType: 'html',
+        success: function (data) {
+          $("#comic-wrapper").html(data);
+        }
+      });
+    }
+  </script>
 {% endblock %}

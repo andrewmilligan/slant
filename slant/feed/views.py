@@ -14,8 +14,3 @@ def index(request):
   random.shuffle(tweets_list)
   context = { 'tweets_list': tweets_list }
   return render(request, 'feed/index.html', context)
-
-#@login_required
-def check_for_new(request):
-  Tweet.check_for_new()
-  return redirect('feed:index')

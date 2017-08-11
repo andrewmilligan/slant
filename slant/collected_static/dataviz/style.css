@@ -38,16 +38,13 @@
   float: right;
   width: 41.667%;
   padding-left: 15px;
-  padding-bottom: 15px;
   margin-top: 15px;
-  margin-bottom: 15px;
 }
 
 .storybox-info {
   float: left;
   width: 58.333%;
   padding-right: 15px;
-  margin-bottom: 15px;
 }
 
 .storybox-info h3 {
@@ -68,11 +65,18 @@
 .outlet-slug {
   font-size: 14px;
   color: #757575;
+  font-variant: small-caps;
 }
 
 .storybox-teaser {
   color: #757575;
   font-size: 15px;
+}
+
+.storybox-teaser .date {
+  float: left;
+  margin-right: 5px;
+  color: #888;
 }
 
 .image-caption {

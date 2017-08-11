@@ -104,11 +104,19 @@ class XkcdAPIBot:
     return rsp_json
 
   def getCurrentComic(self):
+    new_comic = None
     msg = messages.currentComicRequest()
-    return self.parseJsonToComicList(self.requestJson(msg))
+    comic_list = self.parseJsonToComicList(self.requestJson(msg))
+    if comic_list:
+      new_comic = comic_list[0]
+    return new_comic
 
-  def getComicNumStories(self, num):
+  def getComicNum(self, num):
+    new_comic = None
     msg = messages.comicNumRequest(num)
-    return self.parseJsonToComicList(self.requestJson(msg))
+    comic_list = self.parseJsonToComicList(self.requestJson(msg))
+    if comic_list:
+      new_comic = comic_list[0]
+    return new_comic
 
   #- End of Requests -------------------------------------------------------

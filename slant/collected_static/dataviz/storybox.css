@@ -1,0 +1,112 @@
+/** Story Boxes ******************************************
+**********************************************************/
+.storybox {
+  background: #fff;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  padding-left: 20px;
+  border-left: 8px solid #ff0b3a;
+  box-shadow: 5px 5px 2px #ddd;
+}
+
+.storybox, .storybox:after {
+  clear: both;
+}
+
+.storybox:before, .storybox:after {
+  content: " ";
+  display: table;
+}
+
+.storybox-image {
+  float: right;
+  width: 41.667%;
+  padding-left: 15px;
+  margin-top: 15px;
+}
+
+.storybox-info {
+  float: left;
+  width: 58.333%;
+  padding-right: 15px;
+}
+
+.storybox-info h3 {
+  margin-top: 0px;
+  font-size: 20px;
+}
+
+.storybox-info a {
+  color: black;
+}
+
+.storybox-info.noimage {
+  width: 100%;
+  padding-right: 0px;
+  min-height: 220px;
+}
+
+.story-title {
+}
+
+.outlet-slug {
+  font-size: 14px;
+  color: #757575;
+  font-variant: small-caps;
+}
+
+.storybox-teaser {
+  color: #757575;
+  font-size: 15px;
+  font-family: Georgia,serif;
+  line-height: 1.70588235294118;
+}
+
+.storybox-teaser .date {
+  float: left;
+  margin-right: 5px;
+  color: #757575;
+  font-variant: small-caps;
+}
+
+.image-caption {
+  color: #757575;
+  display: block;
+}
+
+.image-caption p {
+  padding-top: 12px;
+  margin-bottom: 2px;
+}
+
+.story-image .image-credit {
+  display: block;
+  text-align: left;
+  color: #757575;
+  font-style: italic;
+  font-size: 11px;
+}
+
+.storybox-image .image-credit {
+  display: block;
+  text-align: right;
+  color: #757575;
+  font-style: italic;
+  font-size: 11px;
+}
+
+.storyboxes-list {
+  max-width: 820px;
+}
+
+.story-image {
+  margin-bottom: 40px;
+}
+
+.story-info {
+  color: #757575;
+  margin-bottom: 20px;
+}

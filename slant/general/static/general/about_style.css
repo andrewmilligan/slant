@@ -1,3 +1,21 @@
+.about-box {
+  background: #fff;
+  border-left: 8px solid #ff0b3a;
+  box-shadow: 5px 5px 2px #ddd;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 5px 20px 5px 20px;
+}
+
+.about-box, .about-box:after {
+  clear: both;
+}
+
+.about-box:before, .about-box:after {
+  content: " ";
+  display: table;
+}
+
 #mugshot {
   border-radius: 50%;
 }

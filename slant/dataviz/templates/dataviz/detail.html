@@ -4,8 +4,8 @@
 {% load dataviz_tags %}
 
 {% block stylesheets %}
+  {{ block.super }}
   <link rel="stylesheet" type="text/css" href="{% static 'dataviz/story_detail.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'dataviz/style.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -23,31 +23,6 @@
         <p>{{ story.bylineName }}</p>
       {% endif %}
     </div>
-
-    {% if false %}
-      <div class="story-image">
-        <div class="imagewrap">
-          <img src="{% static story.primaryImage %}" class="img" width="100%">
-        </div>
-        <div class="credit-caption">
-          <div class="image-caption">
-            <p>{{ story.primaryImage.caption }}</p>
-          </div>
-          <span class="image-credit">
-            {% if story.primaryImage.producer %}
-              {{ story.primaryImage.producer }}
-              {% if story.primaryImage.provider %}
-                /{{ story.primaryImage.provider }}
-              {% endif %}
-            {% else %}
-              {% if story.primaryImage.provider %}
-                {{ story.primaryImage.provider }}
-              {% endif %}
-            {% endif %}
-          </span>
-        </div>
-      </div>
-    {% endif %}
 
     {% if not story.pull_quotes is None  and story.pull_quotes %}
       {% for quote in story.pull_quotes.all %}
@@ -71,6 +46,7 @@
         <span class="glyphicon glyphicon-menu-left"></span>
         <span class="glyphicon glyphicon-menu-left"></span>
         <span class="glyphicon glyphicon-menu-left"></span></a>
+      </p>
     </div>
   </div>
 

@@ -18,8 +18,3 @@ def detail(request, pk):
       'story': story,
       }
   return render(request, 'dataviz/detail.html', context)
-
-#@login_required
-def check_for_new(request):
-  Story.check_for_new()
-  return redirect('dataviz:index')
