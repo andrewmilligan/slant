@@ -53,10 +53,4 @@ class Tweet(models.Model):
           except IntegrityError as e:
             continue
 
-    # delete oldest if there are too many
-    twts = Tweet.objects.all()
-    if len(twts) > 150:
-      new_twts = twts[:150]
-    Tweet.objects.exclude(pk__in=list(new_twts)).delete()
-
     return success
