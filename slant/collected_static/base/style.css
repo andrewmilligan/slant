@@ -1,0 +1,48 @@
+#contentblock-container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+body {
+  background: #eee;
+}
+
+.navbar-default .navbar-brand {
+  color: #ff0b3a;
+  font-variant: small-caps;
+  font-size: 24px;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #d1082f;
+}
+
+.text a {
+  transition-duration: 0.25s;
+  color: inherit;
+}
+
+.text a, .text a:hover {
+  border-bottom: 1px solid #ff0b3a;
+  text-decoration: none;
+}
+
+.text a:hover {
+  transition-duration: 0.25s;
+  color: #ff0b3a;
+}
+
+.text-special a {
+  padding: 2px 0px;
+  transition-duration: 0.25s;
+  color: #ff0b3a;
+}
+
+.text-special a, .text-special a:hover {
+  text-decoration: none;
+}
+
+.text-special a:hover {
+  transition-duration: 0.25s;
+  background-color: #fffd8c;
+}

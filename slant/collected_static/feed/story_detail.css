@@ -1,0 +1,30 @@
+body {
+  background: #fff;
+}
+
+.graph-wrapper {
+  text-align: center;
+  margin: 40px 0px;
+}
+
+.backbutton {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.storyend {
+  text-align: center;
+  margin: 60px 0px;
+}
+
+.storybody::first-letter {
+  font-size: 56px;
+  font-family: Helvetica;
+  float: left;
+  padding: 0px 0.5em 0.5em 0px;
+  line-height: 0.8em;
+  border-right: 1px solid #333;
+  margin-right: 0.4em;
+  margin-top: 0.1em;
+  margin-bottom: 0px;
+}
