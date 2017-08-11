@@ -8,7 +8,7 @@ import ssl        # for HTTPS
 import requests   # Python module for HTTP requests
 
 # Stratosphere Imports
-import models 
+from . import models 
 import messages         # message objects for API message types
 import api_exceptions   # custom exception classes
 import json
