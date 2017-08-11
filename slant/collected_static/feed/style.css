@@ -11,7 +11,11 @@
   margin-right: auto;
 }
 
-.twitter-tweet {
-  width: 100%;
+.tweet-row {
+  margin-bottom: 15px;
+}
+
+#nothingnew {
+  text-align: center;
 }
 

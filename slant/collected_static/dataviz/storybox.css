@@ -50,6 +50,13 @@
 }
 
 .story-title {
+  color: #333;
+  transition-duration: 0.25s;
+}
+
+.storybox-info:hover .story-title {
+  color: #ff0b3a;
+  transition-duration: 0.25s;
 }
 
 .outlet-slug {

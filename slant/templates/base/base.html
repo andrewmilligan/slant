@@ -56,28 +56,6 @@
             </li>
           </ul>
 
-          <ul class="nav navbar-nav navbar-right">
-            {% if user.is_authenticated %}
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                role="button" aria-haspopup="true"
-                aria-expanded="false"><span class="glyphicon glyphicon-cog"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="{% url 'profile' %}">My Account</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Shortcuts</li>
-                <li><a href="{% url 'password_change' %}">Change Password</a></li>
-                <li><a href="{% url 'logout' %}">Logout <span class="glyphicon
-                    glyphicon-log-out" style="float: right;"></span></a></li>
-              </ul>
-            </li>
-            {% else %}
-            <li>
-              <a href="{#% url 'login' %#}"><span class="glyphicon
-                  glyphicon-log-in"></span></a>
-            </li>
-            {% endif %}
-          </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>

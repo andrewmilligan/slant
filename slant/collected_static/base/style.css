@@ -7,14 +7,14 @@ body {
   background: #eee;
 }
 
-.navbar-default .navbar-brand {
+.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
   color: #ff0b3a;
   font-variant: small-caps;
   font-size: 24px;
 }
 
-.navbar-default .navbar-brand:hover {
-  color: #d1082f;
+.navbar-default .navbar-nav li a:hover {
+  color: #ff0b3a;
 }
 
 .text a {
