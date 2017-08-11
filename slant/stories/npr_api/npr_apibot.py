@@ -15,6 +15,7 @@ import datetime         # for all system time interaction
 import messages         # message objects for API message types
 import api_exceptions   # custom exception classes
 import json
+import npr_auth
 
 class NPRAPIBot:
   #- Data Members ----------------------------------------------------------
@@ -27,17 +28,16 @@ class NPRAPIBot:
 
   # base URI
   # this can be overwritten in the API Bot config file
-  base_uri = 'http://api.npr.org/query'
+  base_uri = 'https://api.npr.org'
+  api_version = 'Calcium'
 
   # timeout for HTTP requests
   timeout = 3
   off_ping_rt = 45
   on_ping_rt = 20
 
-  # bearer token - NOT USED BY GATEWAYS
   #api_key = 'MDI5NzM2OTIzMDE0ODQxNjE2OTk5OTZkYw000'
-  #api_key = 'yiCHzT9xSN4sIOEoBNb3fwIvCSFi2mHgz9NYTEqJ'
-  api_key = 'nprone_trial_cNzL6u2aD9eo'
+  auth = npr_auth.NPRAPIAuth()
   #-------------------------------------------------------------------------
 
   #- Initialization --------------------------------------------------------
@@ -69,8 +69,6 @@ class NPRAPIBot:
   #  not an outward-facing function. However, it can be used to send
   #  user-designed message objects to the API.
   #
-  #  @param msg a GatewayToServer message object
-  #
   def GET(self, msg):
     # Send Request.
     #
@@ -88,6 +86,37 @@ class NPRAPIBot:
                               data=msg.data,
                               timeout=self.timeout,
                               verify=True)
+    except requests.exceptions.RequestException as e:
+      raise api_exceptions.RequestError(e, uri)
+    else:
+      return response
+
+  ## HTTP Post Method.
+  #
+  #  This abstracts an HTTP Post request using the Requests module.  It takes a
+  #  message object and uses it to formulate and send the request.
+  #
+  #  This is meant to be a helper function for the API abstractions, and not an
+  #  outward-facing function. However, it can be used to send user-designed
+  #  message objects to the API.
+  #
+  def POST(self, msg):
+    # Send Request.
+    #
+    # Else, extract necessary information from the message object
+    # to formulate and send the request.
+    # If any of this fails, decide that we're offline, cache the
+    # message, and raise an exception.
+    # If it succeeds, we are online. Return the response.
+    #
+    try:
+      uri = '/'.join([self.base_uri, msg.uri])
+      response = requests.post(uri,
+                               headers=msg.headers,
+                               params=msg.params,
+                               data=msg.data,
+                               timeout=self.timeout,
+                               verify=True)
     except requests.exceptions.RequestException as e:
       raise api_exceptions.RequestError(e, uri)
     else:
@@ -188,6 +217,7 @@ class NPRAPIBot:
 
   def requestJson(self, msg):
     rsp = self.GET(msg)
+    print(rsp.text)
     try:
       rsp_json = rsp.json()
     except ValueError as e:
@@ -195,11 +225,39 @@ class NPRAPIBot:
     return rsp_json
 
   def getPoliticsStories(self):
-    msg = messages.politicsRequest(self.api_key)
+    self.authorize()
+    msg = messages.politicsRequest(self.apiKey())
     return self.parseJsonToStoryList(self.requestJson(msg))
 
   def getNewsStories(self):
-    msg = messages.newsRequest(self.api_key)
+    self.authorize()
+    msg = messages.newsRequest(self.apiKey())
     return self.parseJsonToStoryList(self.requestJson(msg))
+
+  # Get Auth Token
+  def getAuthToken(self):
+    msg = messages.authRequest(self.auth.application_id,
+        self.auth.application_secret)
+
+    rsp = self.POST(msg)
+    try:
+      rsp_json = rsp.json()
+    except ValueError as e:
+      raise api_exceptions.APIValueError(e)
+
+    print(rsp_json)
+    try:
+      api_key = rsp_json['access_token']
+    except KeyError as e:
+      raise api_exceptions.AuthError(e)
+    else:
+      return api_key
+
+  def apiKey(self):
+    return self.auth.api_key
+
+  def authorize(self):
+    self.auth.api_key = self.getAuthToken()
+
 
   #- End of Requests -------------------------------------------------------

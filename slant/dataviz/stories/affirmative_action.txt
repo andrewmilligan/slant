@@ -23,8 +23,8 @@ Others, like [Jelanie Cobb from The New Yorker][3], argue that by curbing
 affirmative action, the administration is constructing a "racial protectionism"
 that favors white people as the "unheralded disadvantaged class in America".
 
-We dug into some data in order to provide some context for this debate. All of
-the data analyzed was collected from [IPUMS-USA][4], a project from the
+I dug into some data in order to provide some context for this debate. All of
+the data analyzed were collected from [IPUMS-USA][4], a project from the
 University of Minnesota.
 
 The graph below shows the percentages of white and black people who had

@@ -15,19 +15,6 @@
   margin-bottom: 1.17647058823529em;
 }
 
-.storybody a, .storybody a:hover {
-  border-bottom: 1px solid #ff0b3a;
-  text-decoration: none;
-}
-
-.storybody a {
-  color: inherit;
-}
-
-.storybody a:hover {
-  color: #ff0b3a;
-}
-
 .storybox {
   background: #fff;
   margin-left: 0px;

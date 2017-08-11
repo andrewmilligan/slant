@@ -58,8 +58,12 @@
       {% endfor %}
     {% endif %}
 
-    <div class="storybody">
+    <div class="storybody text">
       {% render_this story.text %}
+    </div>
+
+    <div class="storyend">
+      <img src="{% static 'base/slant_favicon_333.svg' %}">
     </div>
 
     <div class="backbutton">

@@ -8,6 +8,25 @@ import datetime
 
 #- Master Class ------------------------------------------------------------
 
+class NPRAuthRequest:
+  uri = 'authorization/v2/token'
+  headers = {}
+  params = {
+      'grant_type': 'authorization_code',
+      'client_id': '',
+      'client_secret': '',
+      'code': '',
+      'redirect_uri': '',
+      }
+  data = ''
+  data_dict = {}
+
+  def __init__(self, client_id='', client_secret=''):
+    self.params['client_id'] = client_id
+    self.params['client_secret'] = client_secret
+
+
+
 class NPRRequest:
   # public
   uri = ''
@@ -50,6 +69,11 @@ class NPRRequest:
 
 #---------------------------------------------------------------------------
 
+def authRequest(client_id='', client_secret=''):
+  req = NPRAuthRequest(client_id, client_secret)
+  return req
+
+
 def newsRequest(key=None):
   req = NPRRequest(key)
   req.params.update({'id': req.TOPICS['news']})
@@ -88,4 +112,5 @@ def keywordRequest(keyword, key=None):
     return None
   else:
     return req
+
 

@@ -1,4 +1,6 @@
 from npr_requests import NPRRequest
+from npr_requests import NPRAuthRequest
+from npr_requests import authRequest
 from npr_requests import newsRequest
 from npr_requests import politicsRequest
 from npr_requests import economyRequest

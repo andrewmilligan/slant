@@ -1,0 +1,61 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}Slant: About{% endblock %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" type="text/css" href="{% static 'general/about_style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-8 text">
+    <h1 id="about-title" class="page-header">Behind the Slant</h1>
+    <p class="lead">
+    My name is Andrew Milligan. I am a graduate student, a software engineer,
+    a data enthusiast, and an engaged citizen. This project is primarily a
+    hobby and now an accidental portfolio. I built various pieces of this site
+    over a long period of time, but all the code behind it is available on
+    GitHub. 
+    </p>
+
+    <p class="lead">
+    I have drawn a great deal of inspiration for the project from a wide
+    variety of sources. Some of the most prominent include the
+    <a href="https://twitter.com/nytgraphics">New York Times graphics team</a>,
+    <a href="https://www.themarshallproject.org/">The Marshall Project</a>, and
+    the <a href="https://www.jacobinmag.com/">Jacobin</a>. Additionally,
+    <a href="http://junkcharts.typepad.com/">Junk Charts</a> has had a strong
+    influence on my data visualization style.
+    </p>
+  </div>
+
+  <div class="col-md-4 index-banner-item team-member">
+    <img class="mugshot" src="{% static 'general/andrew-square.png' %}" alt="Andrew Milligan"
+    width=100%>
+    <span class="team-member-name">Andrew Milligan,</span>
+    <span class="team-member-tag">Engineer</span>
+    <div class="team-member-links">
+      <span class="team-member-link">
+        <a href="https://twitter.com/andrewimilligan">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+      </span>
+      <span class="team-member-link">
+        <a href="https://github.com/andrewmilligan">
+          <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12" id="bottom-slant-icon">
+    <img src="{% static 'base/slant_favicon_red.svg' %}">
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "feed/base.html" %}
+{% load static %}
+  
+{% block content %}
+
+  <div class="col-md-8">
+    <div class="stream">
+      {% if tweets_list %}
+        
+        {% for tweet in tweets_list %}
+
+          <div class="row">
+            <div class="col-md-12">
+              {% autoescape off %}
+              {{ tweet.html }}
+              {% endautoescape %}
+            </div>
+          </div>
+
+        {% endfor %}
+
+      {% else %}
+        <div class="storybox" id="nothingnew">
+          <h2>No new tweets.</h2>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="outlet-banner">
+
+          <div class="outlet-logo">
+            <img src="{% static 'base/slant_favicon_red.svg' %}" class="img" width="50%">
+          </div>
+
+          <div class="outlet-blurb">
+            <p class="lead text-special">
+            In the <strong>Feed</strong> we display recent tweets from a few
+            accounts I find interesting. Currently, those include
+            <a href="https://twitter.com/nytgraphics">@nytgraphics</a>,
+            <a href="https://twitter.com/WSJGraphics">@WSJGraphics</a>,
+            <a href="https://twitter.com/MarshallProj">@MarshallProj</a>,
+            and <a href="https://twitter.com/jacobinmag">@jacobinmag</a>.
+            </p>
+          </div>
+
+          {% if user.is_authenticated %}
+          <div class="outlet-dashboard">
+            <p>Tweets are updated nightly, but click the button below to
+            reload all saved tweets.</p>
+
+            <div class="dashboard-button">
+              <a class="btn btn-default btn-block" href="{% url 'feed:check_for_new' %}">New Tweets</a>
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

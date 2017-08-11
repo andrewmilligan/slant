@@ -17,8 +17,10 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    #url(r'^admin/', admin.site.urls),
     url(r'^dataviz/', include('dataviz.urls')),
+    url(r'^feed/', include('feed.urls')),
     #url(r'^news/', include('stories.urls')),
     url(r'^comics/', include('comics.urls')),
+    url(r'^', include('general.urls')),
 ]

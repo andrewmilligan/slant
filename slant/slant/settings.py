@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #'south',
     'dataviz.apps.DatavizConfig',
-    'stories.apps.StoriesConfig',
+    #'stories.apps.StoriesConfig',
     'comics.apps.ComicsConfig',
+    'general.apps.GeneralConfig',
+    'feed.apps.FeedConfig',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,84 @@
+{% extends "dataviz/base.html" %}
+{% load static %}
+  
+{% block content %}
+
+  <div class="col-md-8">
+  {% if stories_list %}
+    
+    {% for story in stories_list %}
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="storybox">
+
+            {% if story.primaryImage %}
+            <div class="storybox-image">
+              <div class="imagewrap">
+                <img src="{% static story.primaryImage %}" class="img" width="100%">
+              </div>
+            </div>
+            {% endif %}
+
+            <div class="storybox-info">
+              <h4 class="outlet-slug">{{ story.outlet }}</h4>
+              <h3><a href="{% url 'dataviz:detail' story.id %}">{{ story.title }}</a></h3>
+              <div class="storybox-teaser">
+                {% if story.story_date %}
+                  <span class="date">{{ story.storyDateString }}</span>
+                {% endif %}
+                {% autoescape off %}
+                {{ story.teaser }}
+                {% endautoescape %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+  {% else %}
+    <div class="storybox" id="nothingnew">
+      <h2>No new stories.</h2>
+    </div>
+  {% endif %}
+  </div>
+
+
+  <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="outlet-banner">
+
+          <div class="outlet-logo">
+            <img src="{% static 'base/slant_favicon_red.svg' %}" class="img" width="50%">
+          </div>
+
+          <div class="outlet-blurb">
+            <p>
+            <strong>Slant</strong> is my own thing and only reflects my own
+            opinions&mdash;my own slant. I'm not an expert on any of this.
+            You have been warned.
+            </p>
+          </div>
+
+          {% if user.is_authenticated %}
+          <div class="outlet-dashboard">
+            <p>Stories are updated nightly, but click the button below to
+            reload all saved stories.</p>
+
+            <div class="dashboard-button">
+              <a class="btn btn-default btn-block" href="{% url 'dataviz:check_for_new' %}">New Stories</a>
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
