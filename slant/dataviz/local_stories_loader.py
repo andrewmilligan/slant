@@ -3,7 +3,7 @@
 #  ~~~~~~~~~~~~~~~~~~~~~~~
 #
 
-import models 
+from . import models 
 from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 import datetime         # for all system time interaction

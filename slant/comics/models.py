@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-import xkcd_api
+from . import xkcd_api
 
 # Create your models here.
 
