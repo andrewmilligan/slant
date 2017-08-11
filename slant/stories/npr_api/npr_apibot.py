@@ -8,14 +8,14 @@ import ssl        # for HTTPS
 import requests   # Python module for HTTP requests
 
 # Stratosphere Imports
-import models 
+from . import models 
 from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 import datetime         # for all system time interaction
-import messages         # message objects for API message types
-import api_exceptions   # custom exception classes
+from . import messages         # message objects for API message types
+from . import api_exceptions   # custom exception classes
 import json
-import npr_auth
+from . import npr_auth
 
 class NPRAPIBot:
   #- Data Members ----------------------------------------------------------

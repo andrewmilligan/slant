@@ -3,7 +3,7 @@ from django.db import models, IntegrityError
 from django.utils import timezone
 import json
 
-import npr_api
+from . import npr_api
 
 # Create your models here.
 

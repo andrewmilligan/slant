@@ -1,3 +1,3 @@
-from npr_apibot import NPRAPIBot
-import api_exceptions
-import messages
+from .npr_apibot import NPRAPIBot
+from . import api_exceptions
+from . import messages

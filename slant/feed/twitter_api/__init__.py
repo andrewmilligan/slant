@@ -1,3 +1,3 @@
-from twitter_apibot import TwitterAPIBot
-import api_exceptions
-import messages
+from .twitter_apibot import TwitterAPIBot
+from . import api_exceptions
+from . import messages

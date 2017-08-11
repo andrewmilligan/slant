@@ -9,8 +9,8 @@ import requests   # Python module for HTTP requests
 
 # Stratosphere Imports
 from . import models 
-import messages         # message objects for API message types
-import api_exceptions   # custom exception classes
+from . import messages         # message objects for API message types
+from . import api_exceptions   # custom exception classes
 import json
 
 class XkcdAPIBot:
