@@ -4,7 +4,7 @@ from django.utils import timezone
 import json
 import os
 
-from .local_stories_loader import LocalStoriesLoader
+from local_stories_loader import LocalStoriesLoader
 
 # Create your models here.
 

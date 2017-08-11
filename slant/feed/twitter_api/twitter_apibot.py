@@ -8,15 +8,15 @@ import ssl        # for HTTPS
 import requests   # Python module for HTTP requests
 
 # Stratosphere Imports
-from . import models 
+import models 
 from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 from django.utils.encoding import smart_str
 import datetime         # for all system time interaction
-from . import messages         # message objects for API message types
-from . import api_exceptions   # custom exception classes
+import messages         # message objects for API message types
+import api_exceptions   # custom exception classes
 import json
-from . import twitter_auth
+import twitter_auth
 
 class TwitterAPIBot:
   #- Data Members ----------------------------------------------------------

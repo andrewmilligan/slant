@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.db import models, IntegrityError
 from django.utils import timezone
 
-from . import twitter_api
+import twitter_api
 
 # Create your models here.
 
