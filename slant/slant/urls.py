@@ -18,7 +18,10 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.static import serve as dj_static_serve
 
+import dataviz.views as dv
+
 urlpatterns = [
+    url(r'^$', dv.index),
     #url(r'^admin/', admin.site.urls),
     url(r'^dataviz/', include('dataviz.urls')),
     url(r'^feed/', include('feed.urls')),
