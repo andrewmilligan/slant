@@ -45,6 +45,53 @@ body {
   text-align: center;
   margin: 40px 0px;
 }
+
+.graph-wrapper .title {
+  font-size: 20px;
+}
+
+.graph-wrapper .subtitle {
+  font-size: 14px;
+  color: #888888;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.graph-wrapper .footnote {
+  font-size: 12px;
+  color: #aaa;
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+
+.graph-shortcode-wrapper {
+  text-align: center;
+  margin: 40px 0px;
+}
+
+.graph-shortcode-wrapper .title {
+  font-size: 20px;
+}
+
+.graph-shortcode-wrapper .subtitle {
+  font-size: 14px;
+  color: #888888;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.graph-shortcode-wrapper .footnote {
+  font-size: 12px;
+  color: #aaa;
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 15px;
+}
 /*********************************************************/
 
 
@@ -64,4 +111,3 @@ body {
   margin-top: 30px;
 }
 /*********************************************************/
-

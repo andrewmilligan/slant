@@ -4,7 +4,7 @@ Why We Need Affirmative Action
 @author Andrew Milligan
 @date Sun, 06 Aug 2017 11:27:34 Z
 @outlet Slant
-@djangotags static
+@djangotags static, shortcodes
 @localimages dataviz/images/race_college_timeseries.svg
 
 [[[ Black people are attending college at much lower rates than white
@@ -35,9 +35,7 @@ only been exacerbated over time as the rate of incrase for whites has
 dramatically outpaced that for blacks. In 2015 white people were nearly **twice
 as likely** as black people to complete four years of college.
 
-<div class="graph-wrapper">
-  <img src="{% static 'dataviz/images/race_college_timeseries.svg' %}" width=100%>
-</div>
+{% graph img_path="dataviz/images/race_college_timeseries.svg" footnote="Data came from [IPUMS-USA](https://www.ipums.org/). Get the data and code used [here](https://github.com/slantedlabs/)." %}
 
 Such a gap in college attendance could, in theory, be explained by a systematic
 racial disparity in desire to go to college, but the assumption of such a
@@ -57,22 +55,8 @@ and black that complete each year of college have increased significantly, but
 white people have always completed each successive year of college at much
 higher rates than  black people.
 
-<div class="graph-wrapper">
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_1950.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_1960.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_1970.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_1980.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_1990.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_2000.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_2002.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_2004.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_2006.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_2008.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_2010.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_2012.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_2014.svg' %}" width=100%>
-  <img class="compyear-slide" src="{% static 'dataviz/images/completion_year_2015.svg' %}" width=100%>
-</div>
+
+{% graphanim anim_id=0 img_paths='dataviz/images/completion_year_1950.svg dataviz/images/completion_year_1960.svg dataviz/images/completion_year_1970.svg dataviz/images/completion_year_1980.svg dataviz/images/completion_year_1990.svg dataviz/images/completion_year_2000.svg dataviz/images/completion_year_2002.svg dataviz/images/completion_year_2004.svg dataviz/images/completion_year_2006.svg dataviz/images/completion_year_2008.svg dataviz/images/completion_year_2010.svg dataviz/images/completion_year_2012.svg dataviz/images/completion_year_2014.svg dataviz/images/completion_year_2015.svg'|seplist footnote="Data came from [IPUMS-USA](https://www.ipums.org/). Get the data and code used [here](https://github.com/slantedlabs/)." %}
 
 The fact that white people are, and have been, attending and completing college
 at much higher rates than black people, coupled with the fact that these rates
@@ -88,22 +72,4 @@ affirmative action policies are vital to the development of racial equality.
 [1]: https://www.washingtonpost.com/world/national-security/justice-department-plans-new-project-to-sue-universities-over-affirmative-action-policies/2017/08/01/6295eba4-772b-11e7-8f39-eeb7d3a2d304_story.html?hpid=hp_hp-top-table-main_affirmative-1124pm-2-1:homepage/story&tid=a_inl&utm_term=.68f9da104827
 [2]: https://thefederalist.com/2017/08/02/government-out-college-admissions/
 [3]: http://www.newyorker.com/news/news-desk/in-trumps-world-whites-are-the-only-disadvantaged-class
-[4]: https://www.ipums.org
-
-
-<script>
-	var slideIndex = 0;
-	carousel();
-
-	function carousel() {
-			var i;
-			var x = document.getElementsByClassName("compyear-slide");
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none"; 
-			}
-			slideIndex++;
-			if (slideIndex > x.length) {slideIndex = 1} 
-			x[slideIndex-1].style.display = "block"; 
-			setTimeout(carousel, 500); // Change image every 2 seconds
-	}
-</script>
+[4]: https://www.ipums.org/
