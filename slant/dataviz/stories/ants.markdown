@@ -4,7 +4,7 @@ Spatial Distribution of Effort for Simulated Ants
 @author Andrew Milligan
 @date today
 @outlet Slant
-@djangotags static
+@djangotags static, shortcodes
 @localimages dataviz/images/foraging_map_power.svg
 
 [[[ Foraging ants distribute their foraging effort spatially throughout their
@@ -41,9 +41,7 @@ environment; this is likely because, when wandering randomly, an ant has a much
 lower chance of finding a cluster than it has of finding a seed in a more
 randomly distributed environment.
 
-<div class="graph-wrapper">
-  <img src="{% static 'dataviz/images/foraging_map_clustered.svg' %}" width=100%>
-</div>
+{% graph img_path="dataviz/images/foraging_map_clustered.svg" footnote="More saturated patches indicate greater forager concentration in that region of the simulation arena. Get the data and code used [here](https://github.com/slantedlabs/ants_data)." %}
 
 A *random environment* is the exact opposite of a clustered one: all of the
 seeds are distributed uniformly and independently at random throughout the
@@ -52,9 +50,7 @@ the distribution of dark areas in the graph below indicates that the ants are
 not coordinating their efforts in any particular way, but rather distributing
 their focus more or less evenly across the environment.
 
-<div class="graph-wrapper">
-  <img src="{% static 'dataviz/images/foraging_map_random.svg' %}" width=100%>
-</div>
+{% graph img_path="dataviz/images/foraging_map_random.svg" footnote="Get the data and code used [here](https://github.com/slantedlabs/ants_data)." %}
 
 Finally, a *power-law-distributed environment* is one in which the seeds are
 distrbuted according to a [power law distribution][3], and it is somewhat of a
@@ -66,9 +62,7 @@ proportional to how many clusters of that size there are in the environment
 small clusters). Power law distributions generally follow the [80-20 rule][4],
 in that, roughly, only 20% of the clusters contain 80% of the seeds.
 
-<div class="graph-wrapper">
-  <img src="{% static 'dataviz/images/foraging_map_power.svg' %}" width=100%>
-</div>
+{% graph img_path="dataviz/images/foraging_map_power.svg" footnote="Get the data and code used [here](https://github.com/slantedlabs/ants_data)." %}
 
 From these graphs, it is clear that the spatial distribution of the swarm's
 foraging efforts adheres over time to the underlying distribution of the seeds
