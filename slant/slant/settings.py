@@ -29,10 +29,16 @@ if DEBUG:
     from settings_secret import *
   except ImportError as e:
     raise ImportError("could not import secret settings. \
-        Are you trying to run production in debug mode?")
+Are you trying to run production in debug mode?")
 else:
-  SECRET_KEY = os.environ['SECRET_KEY']
-  DATABASES = {'default': dj_database_url.config()}
+  try:
+    SECRET_KEY = os.environ['SECRET_KEY']
+    DATABASES = {'default': dj_database_url.config()}
+  except KeyError:
+    try:
+      from settings_secret import *
+    except ImportError:
+      raise ImportError("could not find secret settings")
 
 
 ALLOWED_HOSTS = ['*']
