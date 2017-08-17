@@ -56,7 +56,8 @@ white people have always completed each successive year of college at much
 higher rates than  black people.
 
 
-{% graphanim anim_id=0 img_paths='dataviz/images/completion_year_1950.svg dataviz/images/completion_year_1960.svg dataviz/images/completion_year_1970.svg dataviz/images/completion_year_1980.svg dataviz/images/completion_year_1990.svg dataviz/images/completion_year_2000.svg dataviz/images/completion_year_2002.svg dataviz/images/completion_year_2004.svg dataviz/images/completion_year_2006.svg dataviz/images/completion_year_2008.svg dataviz/images/completion_year_2010.svg dataviz/images/completion_year_2012.svg dataviz/images/completion_year_2014.svg dataviz/images/completion_year_2015.svg'|seplist footnote="Data came from [IPUMS-USA](https://www.ipums.org/). Get the code used [here](https://github.com/slantedlabs/affirmative_action_data)." %}
+{% graph img_path='dataviz/images/completion_year.gif' footnote="Data came from [IPUMS-USA](https://www.ipums.org/). Get the code used [here](https://github.com/slantedlabs/affirmative_action_data)." %}
+
 
 The fact that white people are, and have been, attending and completing college
 at much higher rates than black people, coupled with the fact that these rates

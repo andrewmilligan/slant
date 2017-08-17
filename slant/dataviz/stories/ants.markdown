@@ -5,7 +5,7 @@ Spatial Distribution of Effort for Simulated Ants
 @date Mon, 07 Aug 2017 13:24:01 -05
 @outlet Slant
 @djangotags static, shortcodes
-@localimages dataviz/images/foraging_map_power.svg
+@localimages dataviz/images/foraging_map_power.png
 
 [[[ Foraging ants distribute their foraging effort spatially throughout their
 environment in a way that, over time, approximates the spatial distribution of
@@ -41,7 +41,7 @@ environment; this is likely because, when wandering randomly, an ant has a much
 lower chance of finding a cluster than it has of finding a seed in a more
 randomly distributed environment.
 
-{% graph img_path="dataviz/images/foraging_map_clustered.svg" footnote="More saturated patches indicate greater forager concentration in that region of the simulation arena. Get the data and code used [here](https://github.com/slantedlabs/ants_data)." %}
+{% graph img_path="dataviz/images/foraging_map_clustered.png" footnote="More saturated patches indicate greater forager concentration in that region of the simulation arena. Get the data and code used [here](https://github.com/slantedlabs/ants_data)." %}
 
 A *random environment* is the exact opposite of a clustered one: all of the
 seeds are distributed uniformly and independently at random throughout the
@@ -50,7 +50,7 @@ the distribution of dark areas in the graph below indicates that the ants are
 not coordinating their efforts in any particular way, but rather distributing
 their focus more or less evenly across the environment.
 
-{% graph img_path="dataviz/images/foraging_map_random.svg" footnote="Get the data and code used [here](https://github.com/slantedlabs/ants_data)." %}
+{% graph img_path="dataviz/images/foraging_map_random.png" footnote="Get the data and code used [here](https://github.com/slantedlabs/ants_data)." %}
 
 Finally, a *power-law-distributed environment* is one in which the seeds are
 distrbuted according to a [power law distribution][3], and it is somewhat of a
@@ -62,7 +62,7 @@ proportional to how many clusters of that size there are in the environment
 small clusters). Power law distributions generally follow the [80-20 rule][4],
 in that, roughly, only 20% of the clusters contain 80% of the seeds.
 
-{% graph img_path="dataviz/images/foraging_map_power.svg" footnote="Get the data and code used [here](https://github.com/slantedlabs/ants_data)." %}
+{% graph img_path="dataviz/images/foraging_map_power.png" footnote="Get the data and code used [here](https://github.com/slantedlabs/ants_data)." %}
 
 From these graphs, it is clear that the spatial distribution of the swarm's
 foraging efforts adheres over time to the underlying distribution of the seeds
