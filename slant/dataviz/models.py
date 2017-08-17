@@ -40,6 +40,7 @@ class Story(models.Model):
       default=timezone.now)
   outlet = models.CharField(max_length=200,default='')
   images = models.TextField(default='')
+  rank = models.IntegerField(null=True)
   pull_quotes = models.ManyToManyField(PullQuote)
 
   def __unicode__(self):

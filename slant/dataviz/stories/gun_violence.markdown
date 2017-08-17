@@ -2,7 +2,7 @@ Gun Deaths and Background Checks
 ================================
 
 @author Andrew Milligan
-@date Tue, 15 Aug 2017 02:05:59 Z
+@date Tue, 15 Aug 2017 02:05:59 -05
 @outlet Slant
 @djangotags static, shortcodes
 @localimages dataviz/images/missouri_gun_deaths.svg

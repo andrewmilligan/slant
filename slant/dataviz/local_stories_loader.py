@@ -14,10 +14,13 @@ import os
 class LocalStoriesLoader:
   #- Requests --------------------------------------------------------------
 
-  def parseMdToStory(self, storyfile):
+  def parseMdToStory(self, storyfile, rank):
     # TODO: handle bad inputs gracefully.
 
     story_obj = models.Story()
+
+    story_obj.rank = rank
+
     lines = []
     with open(storyfile) as f:
       for line in f:
@@ -102,8 +105,8 @@ class LocalStoriesLoader:
 
   def getLocalStories(self, files):
     stories = []
-    for story_path in files:
-      stories.append(self.parseMdToStory(story_path))
+    for rank, story_path in enumerate(files):
+      stories.append(self.parseMdToStory(story_path, rank))
     return stories
 
 

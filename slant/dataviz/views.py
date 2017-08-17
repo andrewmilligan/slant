@@ -7,7 +7,7 @@ from .models import Story
 
 #@login_required
 def index(request):
-  stories_list = Story.objects.all()
+  stories_list = Story.objects.all().order_by('rank')
   context = { 'stories_list': stories_list }
   return render(request, 'dataviz/index.html', context)
 

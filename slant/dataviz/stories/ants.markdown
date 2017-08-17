@@ -2,7 +2,7 @@ Spatial Distribution of Effort for Simulated Ants
 =================================================
 
 @author Andrew Milligan
-@date today
+@date Mon, 07 Aug 2017 13:24:01 -05
 @outlet Slant
 @djangotags static, shortcodes
 @localimages dataviz/images/foraging_map_power.svg

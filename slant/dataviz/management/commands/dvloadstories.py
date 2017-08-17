@@ -37,4 +37,5 @@ class Command(BaseCommand):
             s_orig.story_date = s.story_date
             s_orig.outlet = s.outlet
             s_orig.images = s.images
+            s_orig.rank = s.rank
             s_orig.save()

@@ -2,7 +2,7 @@ Why We Need Affirmative Action
 ==============================
 
 @author Andrew Milligan
-@date Sun, 06 Aug 2017 11:27:34 Z
+@date Sun, 06 Aug 2017 11:27:34 -05
 @outlet Slant
 @djangotags static, shortcodes
 @localimages dataviz/images/race_college_timeseries.svg

@@ -4,6 +4,7 @@ import os
 _STORY_FILES = [
     "affirmative_action.markdown",
     "gun_violence.markdown",
+    "climate_change.markdown",
     "ants.markdown",
     ]
 
