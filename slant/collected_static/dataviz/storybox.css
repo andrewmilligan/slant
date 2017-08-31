@@ -153,27 +153,25 @@ hr.storybreak {
   display: table;
 }
 
-.adbox-wing {
-  display: none;
+.adbox-body {
+  background: #fff;
 }
-
 @media(min-width: 768px) {
-  .adbox-wing {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100px;
-    text-align: center;
+  .adbox-body {
     background: 0 center repeat-x    url('data:image/svg+xml;utf-8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="6px" viewBox="0 0 9 6" enable-background="new 0 0 9 6" xml:space="preserve"><polygon opacity="0.2" points="4.5,4.5 0,0 0,1.208 4.5,5.708 9,1.208 9,0 "/></svg>');
   }
 }
 
-.adbox-img-wrapper {
-  border: 1px solid #e2e2e2;
-  border-radius: 8px;
-  padding: 15px 0px;
+.adbox-content {
+  background: #fff;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: 0 0 15px 15px #fff;
+          box-shadow: 0 0 15px 15px #fff;
 }
 
-img.twitter-profpic {
-  border-radius: 50%;
+.adbox-img-wrapper img {
+  border-radius: 8px;
+  border: 1px solid #e2e2e2;
 }

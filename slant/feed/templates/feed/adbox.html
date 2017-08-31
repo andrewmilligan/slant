@@ -1,18 +1,14 @@
 {% load static %}
 <a href="{% url 'feed:index' %}" class="no-change">
   <div class="adbox">
-    <div class="col-md-4">
-      <span class="adbox-wing"><span>
-    </div>
-    <div class="col-md-4">
-      <div class="adbox-img-wrapper">
-        <img class="img twitter-profpic" src="{% static 'feed/nytgraphics_twitter_logo.jpg' %}" width=20% />
-        <img class="img twitter-profpic" src="{% static 'feed/jacobinmag_twitter_logo.jpg' %}" width=20% />
-        <img class="img twitter-profpic" src="{% static 'feed/marshallproj_twitter_logo.png' %}" width=20% />
+    <div class="container adbox-body">
+      <div class="row">
+        <div class="adbox-content">
+          <div class="adbox-img-wrapper">
+            <img class="img" src="{% static 'feed/feed_adbox.png' %}">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <span class="adbox-wing"></span>
     </div>
   </div>
 </a>

@@ -42,7 +42,12 @@ class TwitterAPIBot:
       "from:MarshallProject",
       "from:WSJGraphics",
       "from:jacobinmag",
-      "from:NPR",
+      "from:urbaninstitute",
+      "from:PostGraphics",
+      "from:theintercept",
+      "from:teamtrace",
+      "from:nprviz",
+      "from:MforJ",
       ]
   #-------------------------------------------------------------------------
 
