@@ -13,11 +13,15 @@
 
 .lead-story {
   padding: 0px;
-  height: 500px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid #333;
+}
+@media(min-width: 992px) {
+  .lead-story {
+    height: 500px;
+  }
 }
 
 .lead-story-overlay {
@@ -33,26 +37,45 @@
 }
 
 .lead-story-overlay .lead-story-container .lead-story-title {
-  font-size: 48px;
+  font-size: 32px;
+}
+
+@media(min-width: 768px) {
+  .lead-story-overlay .lead-story-container .lead-story-title {
+    font-size: 48px;
+  }
+}
+
+.lead-story-overlay .lead-story-container .lead-story-title {
   color: inherit;
   border-bottom: none;
   transition-duration: 0.25s;
 }
 .lead-story-overlay:hover .lead-story-container .lead-story-title {
-  font-size: 48px;
   color: #ff0b3a;
   border-bottom: 5px solid #ffff00;
   transition-duration: 0.25s;
 }
 
+
 .lead-story-container {
   padding-bottom: 40px;
-  padding-top: 120px;
-  padding-right: 20%;
-  padding-left: 20%;
+  padding-top: 40px;
+  padding-right: 15px;
+  padding-left: 15px;
   color: #fff;
   text-align: center;
 }
+@media(min-width: 992px) {
+  .lead-story-container {
+    padding-bottom: 40px;
+    padding-top: 120px;
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+}
+
+
 
 body {
   background: #eee;
@@ -61,6 +84,10 @@ body {
 .navbar-default {
   background-color: #444;
   border-color: #333;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: #666;
 }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
@@ -117,3 +144,7 @@ body {
   transition-duration: 0.25s;
   background-color: #fffd8c;
 }
+
+a.no-change, a.no-change:hover {
+  text-decoration: inherit;
+  color: inherit;

@@ -25,17 +25,31 @@ hr.storybreak {
 }
 
 .storybox-image {
-  float: left;
+  float: right;
   width: 41.667%;
-  padding-left: 15px;
-  margin-top: 15px;
-  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+@media(min-width: 768px) {
+  .storybox-image {
+    float: left;
+    width: 41.667%;
+    padding-left: 15px;
+    margin-top: 15px;
+    text-align: center;
+  }
 }
 
 .storybox-info {
-  float: right;
-  width: 58.333%;
-  padding-right: 15px;
+  float: none;
+}
+@media(min-width: 768px) {
+  .storybox-info {
+    float: right;
+    width: 58.333%;
+    padding-right: 15px;
+  }
 }
 
 .storybox-info h3 {
@@ -140,13 +154,18 @@ hr.storybreak {
 }
 
 .adbox-wing {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 200px;
-  height: 130px;
-  text-align: center;
-  background: 0 center repeat-x    url('data:image/svg+xml;utf-8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="6px" viewBox="0 0 9 6" enable-background="new 0 0 9 6" xml:space="preserve"><polygon opacity="0.2" points="4.5,4.5 0,0 0,1.208 4.5,5.708 9,1.208 9,0 "/></svg>');
+  display: none;
+}
+
+@media(min-width: 768px) {
+  .adbox-wing {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    text-align: center;
+    background: 0 center repeat-x    url('data:image/svg+xml;utf-8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="6px" viewBox="0 0 9 6" enable-background="new 0 0 9 6" xml:space="preserve"><polygon opacity="0.2" points="4.5,4.5 0,0 0,1.208 4.5,5.708 9,1.208 9,0 "/></svg>');
+  }
 }
 
 .adbox-img-wrapper {
@@ -157,6 +176,4 @@ hr.storybreak {
 
 img.twitter-profpic {
   border-radius: 50%;
-  margin-right: 5px;
-  margin-left: 5px;
 }

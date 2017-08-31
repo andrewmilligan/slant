@@ -15,7 +15,7 @@
   <div class="container-fluid" id="lead-stories-container">
     <div class="row">
       {% for lead_story in stories_list|slice:":2" %}
-      <a href="{% url 'dataviz:detail' lead_story.slug %}">
+      <a href="{% url 'dataviz:detail' lead_story.slug %}" class="no-change">
       <div class="col-md-6 lead-story" style="background-image: url('{% static lead_story.primaryImage %}');">
         <div class="lead-story-overlay">
           <div class="lead-story-container">
@@ -36,7 +36,7 @@
     {% for story in stories_list|slice:"2:" %}
     <div class="row">
       <div class="col-md-12">
-        <a href="{% url 'dataviz:detail' story.slug %}">
+        <a href="{% url 'dataviz:detail' story.slug %}" class="no-change">
           <div class="storybox">
 
             {% if story.primaryImage %}
