@@ -10,6 +10,7 @@ import datetime         # for all system time interaction
 import json
 import markdown
 import os
+import string
 
 class LocalStoriesLoader:
   #- Requests --------------------------------------------------------------
@@ -98,6 +99,17 @@ class LocalStoriesLoader:
     story_obj.text = os.linesep.join(djtags)
     #story_obj.text += markdown.markdown(os.linesep.join(lines[line_num:]))
     story_obj.text += os.linesep.join(lines[line_num:])
+
+    # slug
+    def isSlugChar(c):
+      try:
+        return c in string.letters or c in string.whitespace or int(c) in range(10)
+      except ValueError:
+        pass
+      return False
+
+    slug_chars = ''.join([c for c in story_obj.title if isSlugChar(c)])
+    story_obj.slug = '-'.join(slug_chars.split()).lower()
 
     return story_obj
 

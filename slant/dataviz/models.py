@@ -30,6 +30,7 @@ class PullQuote(models.Model):
 
 
 class Story(models.Model):
+  slug = models.CharField(max_length=200, default='')
   title = models.CharField(max_length=200, default='', unique=True)
   teaser = models.TextField(default='')
   story_date = models.DateTimeField('date published',

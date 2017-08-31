@@ -27,7 +27,7 @@
             </div>
             {% endif %}
 
-            <a href="{% url 'dataviz:detail' story.id %}">
+            <a href="{% url 'dataviz:detail' story.slug %}">
               <div class="storybox-info">
                 <h4 class="outlet-slug">{{ story.outlet }}</h4>
                 <h3 class="story-title">{{ story.title }}</h3>

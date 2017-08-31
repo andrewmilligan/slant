@@ -5,7 +5,7 @@ Spatial Distribution of Effort for Simulated Ants
 @date Mon, 07 Aug 2017 13:24:01 -05
 @outlet Slant
 @djangotags static, shortcodes
-@localimages dataviz/images/foraging_map_power.png
+@localimages dataviz/images/power_transparent.png
 
 [[[ Foraging ants distribute their foraging effort spatially throughout their
 environment in a way that, over time, approximates the spatial distribution of

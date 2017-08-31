@@ -2,8 +2,9 @@ import os
 
 # List RELATIVE paths (from this file) to story files here.
 _STORY_FILES = [
-    "affirmative_action.markdown",
+    "whites_paid_blacks_killed.markdown",
     "gun_violence.markdown",
+    "affirmative_action.markdown",
     "climate_change.markdown",
     "ants.markdown",
     ]

@@ -5,7 +5,7 @@ Why We Need Affirmative Action
 @date Sun, 06 Aug 2017 11:27:34 -05
 @outlet Slant
 @djangotags static, shortcodes
-@localimages dataviz/images/race_college_timeseries.svg
+@localimages dataviz/images/usa_map_warhol.png
 
 [[[ Black people are attending college at much lower rates than white
 people. Completing any years of college has a measurable impact on lifetime

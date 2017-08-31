@@ -1,0 +1,103 @@
+{% extends "dataviz/base.html" %}
+{% load static %}
+{% load dataviz_tags %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'base/outlet_banner.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dataviz/storybox.css' %}">
+{% endblock %}
+  
+{% block rawcontent %}
+
+  {% if stories_list %}
+
+  <div class="container-fluid" id="lead-stories-container">
+    <div class="row">
+      {% for lead_story in stories_list|slice:":2" %}
+      <a href="{% url 'dataviz:detail' lead_story.slug %}">
+      <div class="col-md-6 lead-story" style="background-image: url('{% static lead_story.primaryImage %}');">
+        <div class="lead-story-overlay">
+          <div class="lead-story-container">
+            <span class="lead-story-title">{{ lead_story.title }}</span>
+          </div>
+        </div>
+      </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% endif %}
+
+    
+  <div class="container">
+    {% if stories_list|slice:"2:" %}
+    {% for story in stories_list|slice:"2:" %}
+    <div class="row">
+      <div class="col-md-12">
+        <a href="{% url 'dataviz:detail' story.slug %}">
+          <div class="storybox">
+
+            {% if story.primaryImage %}
+            <div class="storybox-image">
+              <div class="imagewrap">
+                <img src="{% static story.primaryImage %}" class="img" width="60%">
+              </div>
+            </div>
+            {% endif %}
+
+            <div class="storybox-info">
+              <h4 class="outlet-slug">{{ story.outlet }}</h4>
+              <h3 class="story-title">{{ story.title }}</h3>
+              <div class="storybox-teaser">
+                {% if story.story_date %}
+                  <div class="date">{{ story.storyDateString }} &bull;</div>
+                {% endif %}
+                {% render_this story.teaser %}
+              </div>
+            </div>
+
+          </div>
+        </a>
+      </div>
+    </div>
+
+    {% if forloop.counter == 1 %}
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+        {% include 'feed/adbox.html' %}
+    </div>
+  </div>
+  <div class="container">
+    {% else %}
+    {% if forloop.counter == 2 %}
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+        {% include 'comics/adbox.html' %}
+    </div>
+  </div>
+  <div class="container">
+    {% else %}
+    <hr class="storybreak">
+    {% endif %}
+    {% endif %}
+
+
+    {% endfor %}
+    {% else %}
+    <div class="row">
+      <div class="col-md-8">
+        <div class="storybox" id="nothingnew">
+          <h2>No new stories.</h2>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+
+
+{% endblock %}

@@ -61,7 +61,9 @@ class GraphShortcode(base.Shortcode):
       subtitle = markdown.markdown(subtitle)
       subtitle_html = '<div class="subtitle">{}</div>'.format(subtitle)
 
-    body_html = '<img src={src} width=100% />'.format(src=img_url)
+    body_html = '<a href={src} class="no-change">'.format(src=img_url)
+    body_html += '<img src={src} width=100% />'.format(src=img_url)
+    body_html += '</a>'
 
     footnote_html = ''
     if not footnote is None:

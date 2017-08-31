@@ -5,5 +5,5 @@ from . import views
 app_name = 'dataviz'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^(?P<pk>[0-9]+)/$', views.detail, name='detail'),
+    url(r'^(?P<slug>[a-zA-Z0-9-_]+)/$', views.detail, name='detail'),
     ]

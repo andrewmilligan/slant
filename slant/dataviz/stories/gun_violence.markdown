@@ -5,7 +5,7 @@ Gun Deaths and Background Checks
 @date Tue, 15 Aug 2017 02:05:59 -05
 @outlet Slant
 @djangotags static, shortcodes
-@localimages dataviz/images/missouri_gun_deaths.svg
+@localimages dataviz/images/missouri_transparent.png
 
 [[[ A lack of laws requiring criminal background checks for gun sales by
 unlicensed vendors correlates with higher rates of gun deaths. ]]]

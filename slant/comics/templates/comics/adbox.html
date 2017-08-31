@@ -1,0 +1,17 @@
+{% load static %}
+<a href="{% url 'comics:index' %}">
+  <div class="adbox">
+    <div class="col-md-4">
+      <span class="adbox-wing"><span>
+    </div>
+    <div class="col-md-4">
+      <div class="adbox-img-wrapper">
+        <img class="img" src="{% static 'comics/xkcd_banner_crop.png' %}"
+        height=100px />
+      </div>
+    </div>
+    <div class="col-md-4">
+      <span class="adbox-wing"></span>
+    </div>
+  </div>
+</a>

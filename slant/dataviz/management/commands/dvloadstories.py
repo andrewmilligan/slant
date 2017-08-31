@@ -30,6 +30,7 @@ class Command(BaseCommand):
           except IntegrityError as e:
             s_orig = Story.objects.get(title=s.title)
             s_orig.title = s.title
+            s_orig.slug = s.slug
             s_orig.teaser = s.teaser
             s_orig.byline = s.byline
             s_orig.text = s.text

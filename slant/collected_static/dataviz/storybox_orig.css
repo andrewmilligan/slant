@@ -1,18 +1,20 @@
 /** Story Boxes ******************************************
 **********************************************************/
 hr.storybreak {
-  height: 10px;
+  border-top: 2px solid #aaa;
   width: 50%;
-  background: 0 center repeat-x    url('data:image/svg+xml;utf-8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="6px" viewBox="0 0 9 6" enable-background="new 0 0 9 6" xml:space="preserve"><polygon opacity="0.4" points="4.5,4.5 0,0 0,1.208 4.5,5.708 9,1.208 9,0 "/></svg>');
 }
 
 .storybox {
+  background: #fff;
   margin-left: 0px;
   margin-right: 0px;
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 15px;
   padding-left: 20px;
+  border-left: 8px solid #ff0b3a;
+  box-shadow: 5px 5px 2px #ddd;
 }
 
 .storybox, .storybox:after {
@@ -29,7 +31,6 @@ hr.storybreak {
   width: 41.667%;
   padding-left: 15px;
   margin-top: 15px;
-  text-align: center;
 }
 
 .storybox-info {
@@ -58,7 +59,7 @@ hr.storybreak {
   transition-duration: 0.25s;
 }
 
-.storybox:hover .story-title {
+.storybox-info:hover .story-title {
   color: #ff0b3a;
   transition-duration: 0.25s;
 }
@@ -120,43 +121,4 @@ hr.storybreak {
 .story-info {
   color: #757575;
   margin-bottom: 20px;
-}
-
-
-/* Ad Box ********/
-.adbox {
-  text-align: center;
-  background-color: #fff;
-  padding: 20px;
-}
-
-.adbox, .adbox:after {
-  clear: both;
-}
-
-.adbox:before, .adbox:after, .adbox-wing:before, .adbox-wing:after {
-  content: " ";
-  display: table;
-}
-
-.adbox-wing {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 200px;
-  height: 130px;
-  text-align: center;
-  background: 0 center repeat-x    url('data:image/svg+xml;utf-8,<?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="6px" viewBox="0 0 9 6" enable-background="new 0 0 9 6" xml:space="preserve"><polygon opacity="0.2" points="4.5,4.5 0,0 0,1.208 4.5,5.708 9,1.208 9,0 "/></svg>');
-}
-
-.adbox-img-wrapper {
-  border: 1px solid #e2e2e2;
-  border-radius: 8px;
-  padding: 15px 0px;
-}
-
-img.twitter-profpic {
-  border-radius: 50%;
-  margin-right: 5px;
-  margin-left: 5px;
 }

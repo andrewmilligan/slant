@@ -5,7 +5,7 @@ Vital Signs of a Changing Planet
 @date Thu, 17 Aug 2017 13:20:23 -05
 @outlet Slant
 @djangotags static, shortcodes
-@localimages dataviz/images/co2_timeseries.svg
+@localimages dataviz/images/sea_transparent.png
 
 [[[ NASA's Vital Signs of the Planet describe a planet that is changing
 rapidly, with some of the values annually reaching new extremes over all of
