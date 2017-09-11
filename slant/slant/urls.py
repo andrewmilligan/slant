@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^feed/', include('feed.urls')),
     #url(r'^news/', include('stories.urls')),
     url(r'^comics/', include('comics.urls')),
+    url(r'^andrewmilligan/', include('portfolio.urls')),
     url(r'^static/(?P<path>.*)$', dj_static_serve,
       {'document_root': settings.STATIC_ROOT}),
     url(r'^', include('general.urls')),

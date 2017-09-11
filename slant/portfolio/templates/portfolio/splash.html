@@ -1,0 +1,49 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% load dataviz_tags %}
+
+{% block title %}Andrew Milligan{% endblock %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{% static 'portfolio/splash.css' %}">
+{% endblock %}
+  
+{% block rawcontent %}
+
+<div class="portfolio">
+
+  <div class="container-fluid project-container portfolio-intro">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="portfolio-intro">
+          Welcome to my portfolio.
+        </h1>
+        <div class="next-indicator">
+          <i class="fa fa-angle-down" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      {% for proj in projects_list %}
+      <div class="col-xs-12 col-md-4 project-container" style="background-image: url({% static proj.image %});">
+        <h1 class="project-title">{{ proj.title }}</h1>
+        <p class="lead project-teaser">{{ proj.teaser }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
+
+<script>
+window.onscroll = function() { foo(); }
+function foo() {
+  console.log("hello world");
+}
+</script>
+
+{% endblock %}

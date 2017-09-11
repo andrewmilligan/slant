@@ -1,0 +1,55 @@
+.navbar-transparent {
+  color: #eee;
+  background: transparent;
+  border: none;
+}
+
+.navbar-simple .navbar-header::before {
+  display: block;
+}
+
+.navbar-transparent .navbar-brand {
+  color: inherit;
+  font-variant: small-caps;
+  font-size: 18px;
+  transition-duration: 0.25s;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.navbar-transparent .navbar-brand:hover {
+  color: #ff0b3a;
+  transition-duration: 0.25s;
+}
+
+.navbar-transparent .navbar-nav li a {
+  background: transparent;
+  color: inherit;
+  transition-duration: 0.25s;
+}
+.navbar-transparent .navbar-nav li a:hover {
+  background: transparent;
+  color: #ff0b3a;
+  transition-duration: 0.25s;
+}
+
+.navbar-transparent .navbar-toggle.collapsed .icon-bar, .navbar-transparent .navbar-toggle.collapsed:active .icon-bar {
+  background-color: #eee;
+}
+
+
+.navbar-simple .navbar-collapse.collapse {
+  display: block;
+  float: right;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.navbar-nav>li, .navbar-nav {
+  float: left;
+}
+
+.navbar-simple .navbar-header {
+  float: left;
+}
+

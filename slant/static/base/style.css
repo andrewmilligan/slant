@@ -1,6 +1,6 @@
-#contentblock-container {
-  margin-top: 60px;
-  margin-bottom: 60px;
+.contentblock-container {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 #lead-stories-container {

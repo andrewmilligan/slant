@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'comics.apps.ComicsConfig',
     'general.apps.GeneralConfig',
     'feed.apps.FeedConfig',
+    'portfolio.apps.PortfolioConfig',
 ]
 
 MIDDLEWARE = [
