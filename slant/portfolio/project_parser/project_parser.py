@@ -2,6 +2,7 @@ import re
 import shlex
 import os
 import markdown
+from django.templatetags.static import static
 
 ### Regular Expressions #######################################################
 
@@ -71,7 +72,10 @@ def parse_block_graph(img_path, title=None, subtitle=None, footnote=None):
     subtitle = markdown.markdown(subtitle)
     subtitle_html = '<div class="subtitle">{}</div>'.format(subtitle)
 
-  body_html = '<img src={src} width=100% />'.format(src=img_path)
+  img_url = static(img_path)
+  body_html = '<a href={src} class="no-change">'.format(src=img_url)
+  body_html += '<img src={src} width=100% />'.format(src=img_url)
+  body_html += '</a>'
 
   footnote_html = ''
   if not footnote is None:
@@ -88,6 +92,35 @@ def parse_block_graph(img_path, title=None, subtitle=None, footnote=None):
       ]
   return os.linesep.join(html)
 
+# Quote Block
+def parse_block_quote(quote, name=None, source=None, side = "left"):
+  blockquote_class = "blockquote"
+  if side.lower() == "right":
+    blockquote_class = ' '.join([blockquote_class, "blockquote-reverse"])
+
+  quote_html = '<p class="mb-0">{}</p>'.format(quote)
+
+  source_html = None
+  if source is not None:
+    source_html = '<cite title="{0}">{0}</cite>'.format(source)
+
+  footnote = ' in '.join([h for h in [name, source_html] if h is not None])
+  footnote_html = ''
+  if footnote:
+    footnote_html = '<footer class="blockquote-footer">{}</footer>'.format(footnote)
+
+  html = [
+      '<blockquote class="{}">'.format(blockquote_class),
+      quote_html,
+      footnote_html,
+      '</blockquote>',
+      ]
+  return os.linesep.join(html)
+
+# Break Block
+def parse_block_break():
+  return "<hr>"
+
 ###############################################################################
 
 
@@ -101,6 +134,8 @@ registered_tags = {
 
 registered_blocks = {
     "graph": parse_block_graph,
+    "quote": parse_block_quote,
+    "break": parse_block_break,
     }
 
 
@@ -108,14 +143,17 @@ def parse_blocks(text):
   for block, block_parser in registered_blocks.iteritems():
     b_re = block_re(block)
     b_match = re.search(b_re, text)
-    if b_match:
+    while b_match:
       kwargs = {}
       if "args" in b_match.groupdict():
         kwargs = parse_kwargs(b_match.group('args'))
       block_html = block_parser(**kwargs)
+      print("BLOCK:")
+      print(block_html)
       text = os.linesep.join([text[:b_match.start()],
         block_html,
         text[b_match.end():]])
+      b_match = re.search(b_re, text)
   return text
 
 

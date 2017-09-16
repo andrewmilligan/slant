@@ -13,7 +13,7 @@ def index(request):
 
 #@login_required
 def detail(request, slug):
-  proj = get_object_or_404(Project, slug=slug)
+  project = get_object_or_404(Project, slug=slug)
   context = {
       'project': project,
       }

@@ -1,40 +1,23 @@
-{% extends "dataviz/base.html" %}
+{% extends "portfolio/base.html" %}
 
 {% load static %}
 {% load dataviz_tags %}
 
 {% block stylesheets %}
   {{ block.super }}
-  <link rel="stylesheet" type="text/css" href="{% static 'dataviz/story_detail.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'base/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'portfolio/project_detail.css' %}">
 {% endblock %}
 
 {% block content %}
   <div class="story">
 
     <div class="story-title">
-      <h1 id="story-title" class="page-header">{{ story.title }}</h1>
+      <h1 id="story-title" class="page-header">{{ project.title }}</h1>
     </div>
-
-    <div class="story-info">
-      {% if story.story_date %}
-        <p>{{ story.storyDateString }} &bull; {{ story.storyTimeString }}</p>
-      {% endif %}
-      {% if story.byline %}
-        <p>{{ story.bylineName }}</p>
-      {% endif %}
-    </div>
-
-    {% if not story.pull_quotes is None  and story.pull_quotes %}
-      {% for quote in story.pull_quotes.all %}
-        <div class="storyquote">
-          <p><blockquote>{{ quote.text }}</blockquote></p>
-          <p><small>{{ quote.person }}<small></p>
-        </div>
-      {% endfor %}
-    {% endif %}
 
     <div class="storybody text">
-      {% render_this story.text %}
+      {% render_this project.text %}
     </div>
 
     <div class="storyend">
@@ -42,7 +25,7 @@
     </div>
 
     <div class="backbutton">
-      <p><a class="btn btn-default" href="{% url 'dataviz:index' %}" role="button">
+      <p><a class="btn btn-default" href="{% url 'portfolio:index' %}" role="button">
         <span class="glyphicon glyphicon-menu-left"></span>
         <span class="glyphicon glyphicon-menu-left"></span>
         <span class="glyphicon glyphicon-menu-left"></span></a>

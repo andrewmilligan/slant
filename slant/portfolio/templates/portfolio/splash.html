@@ -29,10 +29,12 @@
   <div class="container-fluid">
     <div class="row">
       {% for proj in projects_list %}
-      <div class="col-xs-12 col-md-4 project-container" style="background-image: url({% static proj.image %});">
-        <h1 class="project-title">{{ proj.title }}</h1>
-        <p class="lead project-teaser">{{ proj.teaser }}</p>
-      </div>
+      <a href="{% url 'portfolio:detail' slug=proj.slug %}">
+        <div class="col-xs-12 col-md-4 project-container" style="background-image: url({% static proj.image %});">
+          <h1 class="project-title">{{ proj.title }}</h1>
+          <p class="lead project-teaser">{{ proj.teaser }}</p>
+        </div>
+      </a>
       {% endfor %}
     </div>
   </div>
