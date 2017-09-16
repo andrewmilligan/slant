@@ -2,6 +2,7 @@
 
 from django import template
 import markdown
+from dataviz import project_parser
 
 register = template.Library()
 
@@ -32,6 +33,7 @@ class RenderCustom(template.Node):
     rendered = render_template.render(template.Context())
 
     # 2. Evaluate any shortcodes in the text.
+    rendered = project_parser.parse_blocks(rendered)
 
     # 3. Render the result as markdown. This renders the main text into
     #    HTML with standard MD rules (headers, lists, emphasis, etc),

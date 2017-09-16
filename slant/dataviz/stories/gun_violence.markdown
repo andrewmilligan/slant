@@ -4,8 +4,7 @@ Gun Deaths and Background Checks
 @author Andrew Milligan
 @date Tue, 15 Aug 2017 02:05:59 -05
 @outlet Slant
-@djangotags static, shortcodes
-@localimages dataviz/images/missouri_transparent.png
+@image dataviz/images/missouri_transparent.png
 
 [[[ A lack of laws requiring criminal background checks for gun sales by
 unlicensed vendors correlates with higher rates of gun deaths. ]]]
@@ -25,9 +24,13 @@ increase" in Missouri's homicide rate, as the law was "associated with an
 additional 55 to 63 murders per year in Missouri between 2008 and 2012" than
 forcasts would have estimated had the law not been repealed.
 
-
-{% graph img_path="dataviz/images/missouri_gun_deaths.svg" footnote="The dark line is the crude rate of all deaths in Missouri caused by firearms per 100,000 people as estimated by the CDC; the shaded area shows the 95% confidence interval. Get the data and code used [here](https://github.com/slantedlabs/gun_violence_data)." %}
-
+{@graph
+  img_path = "dataviz/images/missouri_gun_deaths.svg"
+  footnote = "The dark line is the crude rate of all deaths in Missouri caused
+    by firearms per 100,000 people as estimated by the CDC; the shaded area
+    shows the 95% confidence interval. Get the data and code used
+    [here](https://github.com/slantedlabs/gun_violence_data)."
+}
 
 A spike in crime within Missouri does not tell the entire story, however. The
 same study found that police in neighboring states with harsher gun laws
@@ -50,10 +53,16 @@ laws. Moreover, gun-related death rates are significantly higher in states
 without these laws across the entire period, and the difference is only
 increasing.
 
-
-{% graph img_path="dataviz/images/national_gun_deaths_bg_checks.gif" footnote="The dark line is the crude rate of all deaths in Missouri caused by firearms per 100,000 people as estimated by the CDC; the shaded area shows the 95% confidence interval. Get the data and code used [here](https://github.com/slantedlabs/gun_violence_data)." %}
-
-
+{@graph
+  img_path = "dataviz/images/national_gun_deaths_bg_checks.gif"
+  footnote = "Each pint shows the crude rate of all deaths in a state in a
+    given year as estimated by the CDC; black and red states do and don't have
+    background check laws, respectively. The lines show LOESS fitting the two
+    classes of states with 95% confidence intervals. The density plots at the
+    right show the distributions of rates for states with (black) and without
+    (red) background check laws. Get the data and code used
+    [here](https://github.com/slantedlabs/gun_violence_data)."
+}
 
 
 [1]: https://wonder.cdc.gov/

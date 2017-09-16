@@ -1,0 +1,141 @@
+/** General **********************************************
+**********************************************************/
+body {
+  background: #fff;
+}
+
+.navbar-transparent {
+  color: #333;
+  background-color: #fff;
+}
+
+.story {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+}
+/*********************************************************/
+
+
+/** Story Info *******************************************
+**********************************************************/
+.story-info {
+  margin-bottom: 30px;
+}
+/*********************************************************/
+
+
+/** Story Body *******************************************
+**********************************************************/
+.storybody {
+  font-family: Georgia,serif;
+  font-size: 17px;
+  line-height: 1.70588235294118;
+}
+
+.storybody p {
+  margin-bottom: 1.17647058823529em;
+}
+
+.storybody::first-letter {
+  font-size: 56px;
+  font-family: Helvetica;
+  float: left;
+  padding: 0px 0.5em 0.5em 0px;
+  line-height: 0.8em;
+  border-right: 1px solid #333;
+  margin-right: 0.4em;
+  margin-top: 0.1em;
+  margin-bottom: 0px;
+}
+
+.storybody blockquote {
+  border-left: 5px solid #ffc6c6;
+  font-size: 90%;
+  color: #666;
+}
+
+.storybody h1, .storybody h2, .storybody h3 {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.storybody hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/*********************************************************/
+
+
+/** Graphs ***********************************************
+**********************************************************/
+.graph-wrapper {
+  text-align: center;
+  margin: 40px 0px;
+}
+
+.graph-wrapper .title {
+  font-size: 20px;
+}
+
+.graph-wrapper .subtitle {
+  font-size: 14px;
+  color: #888888;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.graph-wrapper .footnote {
+  font-size: 12px;
+  color: #aaa;
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+
+.graph-shortcode-wrapper {
+  text-align: center;
+  margin: 40px 0px;
+}
+
+.graph-shortcode-wrapper .title {
+  font-size: 20px;
+}
+
+.graph-shortcode-wrapper .subtitle {
+  font-size: 14px;
+  color: #888888;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.graph-shortcode-wrapper .footnote {
+  font-size: 12px;
+  color: #aaa;
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+/*********************************************************/
+
+
+/** Story Ending *****************************************
+**********************************************************/
+.storyend {
+  text-align: center;
+  margin: 60px 0px;
+}
+/*********************************************************/
+
+
+/** Back Button ******************************************
+**********************************************************/
+.backbutton {
+  text-align: center;
+  margin-top: 30px;
+}
+/*********************************************************/

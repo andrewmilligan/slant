@@ -4,8 +4,7 @@ Why We Need Affirmative Action
 @author Andrew Milligan
 @date Sun, 06 Aug 2017 11:27:34 -05
 @outlet Slant
-@djangotags static, shortcodes
-@localimages dataviz/images/usa_map_warhol.png
+@image dataviz/images/usa_map_warhol.png
 
 [[[ Black people are attending college at much lower rates than white
 people. Completing any years of college has a measurable impact on lifetime
@@ -35,7 +34,11 @@ only been exacerbated over time as the rate of incrase for whites has
 dramatically outpaced that for blacks. In 2015 white people were nearly **twice
 as likely** as black people to complete four years of college.
 
-{% graph img_path="dataviz/images/race_college_timeseries.svg" footnote="Data came from [IPUMS-USA](https://www.ipums.org/). Get the code used [here](https://github.com/slantedlabs/affirmative_action_data)." %}
+{@graph
+  img_path = "dataviz/images/race_college_timeseries.svg"
+  footnote = "Data came from [IPUMS-USA](https://www.ipums.org/). Get the code
+    used [here](https://github.com/slantedlabs/affirmative_action_data)."
+}
 
 Such a gap in college attendance could, in theory, be explained by a systematic
 racial disparity in desire to go to college, but the assumption of such a
@@ -55,9 +58,11 @@ and black that complete each year of college have increased significantly, but
 white people have always completed each successive year of college at much
 higher rates than  black people.
 
-
-{% graph img_path='dataviz/images/completion_year.gif' footnote="Data came from [IPUMS-USA](https://www.ipums.org/). Get the code used [here](https://github.com/slantedlabs/affirmative_action_data)." %}
-
+{@graph
+  img_path = 'dataviz/images/completion_year.gif'
+  footnote = "Data came from [IPUMS-USA](https://www.ipums.org/). Get the code
+    used [here](https://github.com/slantedlabs/affirmative_action_data)."
+}
 
 The fact that white people are, and have been, attending and completing college
 at much higher rates than black people, coupled with the fact that these rates
