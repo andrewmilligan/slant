@@ -3,8 +3,10 @@ import os
 # List RELATIVE paths (from this file) to story files here.
 _STORY_FILES = [
     "slant.markdown",
+    "stc.markdown",
     "data.markdown",
     "seattle_stage.markdown",
+    "thehub.markdown",
     ]
 
 _DIRECTORY_PATH = os.path.dirname(os.path.abspath(__file__))

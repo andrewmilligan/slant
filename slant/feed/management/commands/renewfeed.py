@@ -25,7 +25,7 @@ class Command(BaseCommand):
       # first, delete old ones (downloaded more than 24 hours ago)
       now = timezone.now()
       for t in Tweet.objects.all():
-        if (now - t.created_at).seconds >= 86400:
+        if (now - t.created_at).seconds >= (86400 / 2):
           t.delete()
 
       for tweet in tweets:
