@@ -28,7 +28,7 @@ release it soon.
 
 {@graph
   img_path = "portfolio/projects/seattlestage/calendar.png"
-  footnote = "A calendar display of local shows occuring this month. The month
+  footnote = "A calendar display of local shows occurring this month. The month
     displayed can be changed via the UI and the page is updated using AJAX."
 }
 

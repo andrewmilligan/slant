@@ -43,7 +43,7 @@ Markdown content to a fully structured and accessibly styled website that puts
 Solaflect's documentation at the fingertips of its employees. While more
 complicated and extensive solutions are available in the form of more
 conventional CMSs, the fast-paced development cycle at Solaflect favored a
-quick and useable solution that would make documentation accessible without
+quick and usable solution that would make documentation accessible without
 tying up development resources.
 
 

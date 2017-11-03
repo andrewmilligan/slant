@@ -64,7 +64,7 @@ graph effective are:
 
 The map below is from the same story; it shows the geographical distribution of
 the disparity between the representation of black people in those killed by the
-police and the representation of black peopl in the population.
+police and the representation of black people in the population.
 
 I collected these data from [Mapping Police Violence][mpv], a project working
 to "provide greater transparency and accountability for police departments".
@@ -132,9 +132,9 @@ in clusters of varying size.
 One of the technical challenges of creating this graph&mdash;and on of the
 things that makes it so visually effective&mdash;was applying a high-pass
 filter to the two-dimensional histogram. In the graph we can see the ghostly
-paths wherea small number of ants have foraged; in order to prevent this from
+paths where a small number of ants have foraged; in order to prevent this from
 obfuscating the meaningful data, I applied a progressive alpha gradient to the
-loweest ranges of the data, making insignificant rarities less visually
+lowest ranges of the data, making insignificant rarities less visually
 confusing.
 
 {@graph

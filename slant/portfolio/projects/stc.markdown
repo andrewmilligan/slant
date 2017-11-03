@@ -16,7 +16,7 @@ that had been hastily written by a consultant shortly after the creation of the
 company. Six years later, I brought it back into active development.
 
 My improvements included making the controls system autonomous and not
-constantly reliant on external inputs and conerting the controls system into a
+constantly reliant on external inputs and converting the controls system into a
 state machine that was more reliable and robust.
 
 <iframe src='//gifs.com/embed/solaflect-day-in-the-life-of-a-solar-tracker-wjMm4w' frameborder='0' scrolling='no' width='640px' height='360px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);'></iframe>
