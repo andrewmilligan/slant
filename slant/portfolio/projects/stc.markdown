@@ -19,7 +19,7 @@ My improvements included making the controls system autonomous and not
 constantly reliant on external inputs and converting the controls system into a
 state machine that was more reliable and robust.
 
-<iframe src='//gifs.com/embed/solaflect-day-in-the-life-of-a-solar-tracker-wjMm4w' frameborder='0' scrolling='no' width='640px' height='360px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);'></iframe>
+<iframe src='//gifs.com/embed/solaflect-day-in-the-life-of-a-solar-tracker-wjMm4w' frameborder='0' scrolling='no' width='100%' height='360px' style='-webkit-backface-visibility: hidden;-webkit-transform: scale(1);'></iframe>
 
 
 [solaflect]: http://www.solaflect.com/
