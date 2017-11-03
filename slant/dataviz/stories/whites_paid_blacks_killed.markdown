@@ -45,7 +45,7 @@ income.
 The map below shows the geographical distribution of the disparity between the
 white population and income received by white people. DC clearly stands out as
 having the highest disparity by far, but most of the southern states also rank
-amongst the worst. The entire band of states from South Carolina to Louisiana
+among the worst. The entire band of states from South Carolina to Louisiana
 fall in the top six worst states. The New York tri-state area also suffers from
 high disparities.
 

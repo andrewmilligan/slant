@@ -22,7 +22,7 @@ rules, foraging swarms are able to reach a surprisingly effective geographical
 allocation of resources relatively quickly.
 
 I simulated foraging ant swarms with the [Central Place Foraging Algorithm
-(CPFA)][2] implemented in the ARGoS simulation evironment, which is a prominent
+(CPFA)][2] implemented in the ARGoS simulation environment, which is a prominent
 implementation of ant swarm foraging strategies for use in robotic swarms. The
 graphs below display the spatial distributions of effort employed by these
 swarms in a variety of environments. I captured all the coordinates that each
@@ -61,7 +61,7 @@ their focus more or less evenly across the environment.
 }
 
 Finally, a *power-law-distributed environment* is one in which the seeds are
-distrbuted according to a [power law distribution][3], and it is somewhat of a
+distributed according to a [power law distribution][3], and it is somewhat of a
 middle ground between the fully clustered distribution and the fully random
 distribution. In a power-law-distributed environment, clusters are placed
 randomly throughout the environment, but the size of each cluster is

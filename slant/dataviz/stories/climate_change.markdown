@@ -23,7 +23,7 @@ increasing.
 
 {@graph
   img_path = "dataviz/images/temp_timeseries.svg"
-  footnote = "In grey are the global averages at each measurement; in red is
+  footnote = "In gray are the global averages at each measurement; in red is
     the rolling 5-year average. Get the data and code used
     [here](https://github.com/slantedlabs/nasa_climate_change_data). See more
     from NASA
@@ -39,7 +39,7 @@ gas&mdash;in the atmosphere.
 
 {@graph
   img_path = "dataviz/images/co2_timeseries.svg"
-  footnote = "In grey are the individual measurements; in red the trend with
+  footnote = "In gray are the individual measurements; in red the trend with
     seasonal cycles removed. These data were collected at the Mauna Loa
     Observatory in Hawaii. Get the data and code used
     [here](https://github.com/slantedlabs/nasa_climate_change_data). See more
@@ -48,7 +48,7 @@ gas&mdash;in the atmosphere.
 
 Sea level rise exhibits a similar unyielding advance. The graph below shows the
 amount of sea level rise in millimeters from a 1993 baseline. Rising seas,
-which [threaten][3] some of the largest U.S. cities, are [already dispacing][4]
+which [threaten][3] some of the largest U.S. cities, are [already displacing][4]
 island communities.
 
 
@@ -61,7 +61,7 @@ greatly to sea level rise and exacerbate temperature changes by altering the
 planet's [albedo][5].
 
 
-{% graph img_path="dataviz/images/ice_timeseries.svg" footnote="The dark line is a satellite etimate of ice sheet mass; the light region shows 1-&sigma; uncetainty. Get the data and code used [here](https://github.com/slantedlabs/nasa_climate_change_data). See more from NASA [here](https://climate.nasa.gov/vital-signs/land-ice/)." %}
+{% graph img_path="dataviz/images/ice_timeseries.svg" footnote="The dark line is a satellite estimate of ice sheet mass; the light region shows 1-&sigma; uncertainty. Get the data and code used [here](https://github.com/slantedlabs/nasa_climate_change_data). See more from NASA [here](https://climate.nasa.gov/vital-signs/land-ice/)." %}
 
 
 All of these vital signs scream the same thing: we are rapidly&mdash;and

@@ -22,7 +22,7 @@ and licenses for all handgun owners. A [study][4] from the Johns Hopkins
 Bloomberg School of Public Health found that the repeal led to a "sharp
 increase" in Missouri's homicide rate, as the law was "associated with an
 additional 55 to 63 murders per year in Missouri between 2008 and 2012" than
-forcasts would have estimated had the law not been repealed.
+forecasts would have estimated had the law not been repealed.
 
 {@graph
   img_path = "dataviz/images/missouri_gun_deaths.svg"

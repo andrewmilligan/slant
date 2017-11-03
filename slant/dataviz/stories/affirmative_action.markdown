@@ -30,7 +30,7 @@ The graph below shows the percentages of white and black people who had
 completed four years of college between 1950 and 2015. Both white and black
 people have been completing four years of college at increasing rates since
 1950, but there has always been a racial disparity. Further, that disparity has
-only been exacerbated over time as the rate of incrase for whites has
+only been exacerbated over time as the rate of increase for whites has
 dramatically outpaced that for blacks. In 2015 white people were nearly **twice
 as likely** as black people to complete four years of college.
 
