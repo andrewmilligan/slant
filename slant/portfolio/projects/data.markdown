@@ -10,8 +10,8 @@ Data
 In an increasingly data-driven world, vast amounts of information are at our
 fingertips&mdash;but that information is only as good as our ability to
 interpret it. When dealing with complex data sets, and even sometimes with
-seemingly simple data sets, the the task of extracting a clear and concise
-story from the data can be immense. Often, expecting a reader to spend time and
+seemingly simple data sets, the task of extracting a clear and concise story
+from the data can be immense. Often, expecting a reader to spend time and
 effort to understand the complexities and nuances of a dataset is unrealistic,
 and, when faced with such a task, the reader will simply move on. This is
 especially true in data-driven stories that attempt to reach the general public
@@ -59,7 +59,7 @@ graph effective are:
   img_path = "portfolio/projects/data/income_disparity.svg"
   footnote = "Data from [IPUMS USA](https://usa.ipums.org/usa/) using total
     family income, race, and state from 2013 to 2015. Get the data and code
-    used [here](https:://github.com/slantedlabs/whites_paid_blacks_killed)."
+    used [here](https://github.com/slantedlabs/whites_paid_blacks_killed)."
 }
 
 The map below is from the same story; it shows the geographical distribution of
@@ -104,7 +104,7 @@ distribution of black states.
 
 {@graph
   img_path = "portfolio/projects/data/national_gun_deaths_bg_checks.gif"
-	footnote = "Each pint shows the crude rate of all deaths in a state in a
+	footnote = "Each point shows the crude rate of all deaths in a state in a
     given year as estimated by the CDC; black and red states do and don't have
     background check laws, respectively. The lines show LOESS fitting the two
     classes of states with 95% confidence intervals. The density plots at the
@@ -129,7 +129,7 @@ distribution of seeds with their spatial distribution of foraging effort. It is
 clear from the graph that the seeds were distributed throughout the environment
 in clusters of varying size.
 
-One of the technical challenges of creating this graph&mdash;and on of the
+One of the technical challenges of creating this graph&mdash;and one of the
 things that makes it so visually effective&mdash;was applying a high-pass
 filter to the two-dimensional histogram. In the graph we can see the ghostly
 paths where a small number of ants have foraged; in order to prevent this from
