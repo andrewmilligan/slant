@@ -10,7 +10,7 @@ troops, and venues in Seattle. Connecting Seattle's vibrant theatre scene. ]]]
 
 Seattle Stage was a project envisioned by the [Frozen Sea Theatre
 Collective][1], a group of theatre artists striving to create a place for new
-works and female driven work in the Seattle Area. Their mission is "to break
+works and female-driven work in the Seattle Area. Their mission is "to break
 the ice to the frozen sea in all of us through meaningful and powerful
 theatre", and they seek to achieve this both by writing and producing
 challenging and empowering shows, and by connecting and engaging the Seattle
