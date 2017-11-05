@@ -39,7 +39,7 @@ income.
   img_path = "dataviz/images/income_disparity.svg"
   footnote = "Data from [IPUMS USA](https://usa.ipums.org/usa/) using total
     family income, race, and state from 2013 to 2015. Get the data and code
-    used [here](https:://github.com/slantedlabs/whites_paid_blacks_killed)."
+    used [here](https://github.com/slantedlabs/whites_paid_blacks_killed)."
 }
 
 The map below shows the geographical distribution of the disparity between the
@@ -53,7 +53,7 @@ high disparities.
   img_path = "dataviz/images/income_disparity_map.svg"
   footnote = "Data from [IPUMS USA](https://usa.ipums.org/usa/) using total
     family income, race, and state from 2013 to 2015. Get the data and code
-    used [here](https:://github.com/slantedlabs/whites_paid_blacks_killed)."
+    used [here](https://github.com/slantedlabs/whites_paid_blacks_killed)."
 }
 
 White people are over-represented in income, but black people are even more
