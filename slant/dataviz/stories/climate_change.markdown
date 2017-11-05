@@ -52,8 +52,17 @@ which [threaten][3] some of the largest U.S. cities, are [already displacing][4]
 island communities.
 
 
-{% graph img_path="dataviz/images/sea_timeseries.svg" footnote="The area and dark blue line show the global mean sea level change from the start of the time series with annual and semiannual cycles removed; the jagged line includes these cycles. These data have Global Isostatic Adjustment applied to adjust for data collection methods. The dark line additionally has a 60-day Gaussian filter applied. Get the data and code used [here](https://github.com/slantedlabs/nasa_climate_change_data). See more from NASA [here](https://climate.nasa.gov/vital-signs/sea-level/)." %}
-
+{@graph
+  img_path = "dataviz/images/sea_timeseries.svg"
+  footnote = "The area and dark blue line show the global mean sea level change
+    from the start of the time series with annual and semiannual cycles
+    removed; the jagged line includes these cycles. These data have Global
+    Isostatic Adjustment applied to adjust for data collection methods. The
+    dark line additionally has a 60-day Gaussian filter applied. Get the data
+    and code used
+    [here](https://github.com/slantedlabs/nasa_climate_change_data). See more
+    from NASA [here](https://climate.nasa.gov/vital-signs/sea-level/)."
+}
 
 This final graph shows shrinkage of the Antarctic ice sheet. The shrinkage of
 polar ice sheets, sea ice, and glaciers due to rising temperatures contribute
@@ -61,7 +70,13 @@ greatly to sea level rise and exacerbate temperature changes by altering the
 planet's [albedo][5].
 
 
-{% graph img_path="dataviz/images/ice_timeseries.svg" footnote="The dark line is a satellite estimate of ice sheet mass; the light region shows 1-&sigma; uncertainty. Get the data and code used [here](https://github.com/slantedlabs/nasa_climate_change_data). See more from NASA [here](https://climate.nasa.gov/vital-signs/land-ice/)." %}
+{@graph
+  img_path = "dataviz/images/ice_timeseries.svg"
+  footnote = "The dark line is a satellite estimate of ice sheet mass; the
+    light region shows 1-&sigma; uncertainty. Get the data and code used
+    [here](https://github.com/slantedlabs/nasa_climate_change_data). See more
+    from NASA [here](https://climate.nasa.gov/vital-signs/land-ice/)."
+}
 
 
 All of these vital signs scream the same thing: we are rapidly&mdash;and
