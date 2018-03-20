@@ -161,6 +161,7 @@ def parse_project(fname):
   with open(fname) as f:
     ftext = f.read()
 
+  # Match, record, and remove the title and teaser
   title = ''
   title_match = re.search(title_re, ftext)
   if title_match:
@@ -179,6 +180,8 @@ def parse_project(fname):
       'title': title,
       'teaser': teaser,
       }
+
+
   for tag, tag_parser in registered_tags.iteritems():
     t_re = tag_re(tag)
     t_match = re.search(t_re, ftext)
