@@ -7,6 +7,7 @@ from .models import Comic
 
 #@login_required
 def index(request):
+  comic = Comic.check_for_new()
   comic = Comic.objects.all().first()
   return render(request, 'comics/index.html', {'comic': comic})
 
